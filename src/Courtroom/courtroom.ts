@@ -1,5 +1,5 @@
 export class Courtroom {
-  helloWorld(): string {
-    return "Hello world!";
+  constructor() {
+    throw new Error("break the test!");
   }
 }
