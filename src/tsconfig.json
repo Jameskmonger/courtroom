@@ -22,7 +22,8 @@
         "!node_modules/**"
     ],
     "files": [
-        "Courtroom/courtroom.ts"
+        "Courtroom/courtroom.ts",
+        "Courtroom/property.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

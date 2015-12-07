@@ -11,7 +11,17 @@ define(['Courtroom/courtroom'], function(Courtroom) {
     it("does not have validated properties", function() {
       var c = new Courtroom();
 
-      expect(c.getValidatedProperties().length).toBe(0);
+      expect(c.hasProperties()).toBe(false);
     })
+  });
+
+  describe("Construction with one rule", function() {
+    it("has validated properties", function() {
+      var c = new Courtroom();
+
+      c.trial("cheese");
+
+      expect(c.hasProperties()).toBe(false);
+    });
   });
 });
