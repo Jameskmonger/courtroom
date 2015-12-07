@@ -15,13 +15,21 @@ define(['Courtroom/courtroom'], function(Courtroom) {
     })
   });
 
-  describe("Construction with one rule", function() {
+  describe("Construction with one trial", function() {
     it("has validated properties", function() {
       var c = new Courtroom();
 
       c.trial("cheese");
 
       expect(c.hasProperties()).toBe(false);
+    });
+
+    it("applies rules to properties", function() {
+      var c = new Courtroom();
+
+      c.trial("bla").setNum(1996);
+
+      expect(c.firstping()).toBe(1996);
     });
   });
 });

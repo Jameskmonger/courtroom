@@ -11,7 +11,15 @@ export class Courtroom {
     return false;
   }
 
+  firstping(): number {
+    return this.properties[0].getNum();
+  }
+
   trial(name: string) {
-    this.properties.push(new Property(name));
+    var p = new Property(name);
+
+    this.properties.push(p);
+
+    return p;
   }
 }
