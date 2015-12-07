@@ -1,0 +1,15 @@
+{
+  "name": "courtroom",
+  "version": "0.0.1",
+  "description": "A dynamic validation platform",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jameskmonger/courtroom.git"
+  },
+  "author": "James Monger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jameskmonger/courtroom/issues"
+  },
+  "homepage": "https://github.com/Jameskmonger/courtroom#readme"
+}
