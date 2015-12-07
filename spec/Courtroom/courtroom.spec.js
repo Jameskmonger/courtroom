@@ -1,4 +1,4 @@
-define(['courtroom'], function(Courtroom) {
+define(['Courtroom/courtroom'], function(Courtroom) {
   Courtroom = Courtroom.Courtroom;
 
   describe("Hello world", function() {

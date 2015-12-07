@@ -13,6 +13,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
+        "rootDir": "../src/",
         "outDir": "../build/"
     },
     "filesGlob": [
