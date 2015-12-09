@@ -1,0 +1,25 @@
+{
+  "name": "courtroom",
+  "version": "1.0.0",
+  "description": "Validation made easy!",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jameskmonger/courtroom.git"
+  },
+  "keywords": [
+    "Validation"
+  ],
+  "author": "James Monger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jameskmonger/courtroom/issues"
+  },
+  "homepage": "https://github.com/Jameskmonger/courtroom#readme",
+  "dependencies": {
+    "requirejs": "^2.1.22"
+  }
+}
