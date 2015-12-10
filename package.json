@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Jameskmonger/courtroom#readme",
   "dependencies": {
     "requirejs": "^2.1.22"
+  },
+  "devDependencies": {
+    "karma": "^0.13.15"
   }
 }
