@@ -13,7 +13,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "out": "../build/courtroom.js"
+        "outDir": "../build/"
     },
     "filesGlob": [
         "**/*.ts",
@@ -21,8 +21,7 @@
         "!node_modules/**"
     ],
     "files": [
-        "courtroom/first.ts",
-        "courtroom/second.ts"
+        "courtroom/courtroom.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
