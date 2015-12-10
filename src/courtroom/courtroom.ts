@@ -1,5 +1,7 @@
-export module CourtroomValidation {
-  export class Courtroom {
-    
+export class Courtroom {
+  public defendantCount: number;
+
+  constructor() {
+    this.defendantCount = 0;
   }
 }
