@@ -1,5 +1,7 @@
 # courtroom
 
+[![Coverage Status](https://coveralls.io/repos/Jameskmonger/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/Jameskmonger/courtroom?branch=master)
+
 Validation-tastic :no_entry:
 
 ### Setup :wrench:
