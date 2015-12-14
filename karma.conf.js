@@ -16,9 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.js',
-      {pattern: 'spec/helpers/**/*.js', included: true},
       {pattern: 'build/*.js', included: false},
-      {pattern: 'lib/**/*.js', included: false},
       {pattern: 'spec/**/*.spec.js', included: false}
     ],
 
@@ -31,13 +29,18 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'build/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
+
+    coverageReporter: {
+      type: 'text'
+    },
 
 
     // web server port
