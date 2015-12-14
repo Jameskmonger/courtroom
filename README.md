@@ -1,6 +1,6 @@
 # courtroom
 
-[![Coverage Status](https://coveralls.io/repos/Jameskmonger/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/Jameskmonger/courtroom?branch=master)
+[![Build Status](https://travis-ci.org/Jameskmonger/courtroom.svg?branch=master)](https://travis-ci.org/Jameskmonger/courtroom) [![Coverage Status](https://coveralls.io/repos/Jameskmonger/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/Jameskmonger/courtroom?branch=master)
 
 Validation-tastic :no_entry:
 
