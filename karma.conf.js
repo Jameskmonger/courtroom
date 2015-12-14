@@ -67,7 +67,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // Concurrency level
     // how many browser should be started simultanous
@@ -76,7 +76,8 @@ module.exports = function(config) {
 
   if(process.env.TRAVIS){
     configuration.browsers = ['PhantomJS'];
-	configuration.reporters.push('coveralls');
+    configuration.reporters.push('coveralls');
+    configuration.singleRun = true;
   }
 
   config.set(configuration);
