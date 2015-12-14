@@ -7,8 +7,12 @@ export class Courtroom {
     this.defendants = [];
   }
 
-  public trial(name: string) {
-    this.defendants.push(new Defendant.Defendant(name));
+  public trial(name: string): Defendant.Defendant {
+    var defendant = new Defendant.Defendant(name);
+
+    this.defendants.push(defendant);
+
+    return defendant;
   }
 
   public getDefendantCount(): number {

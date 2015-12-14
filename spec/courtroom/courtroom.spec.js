@@ -26,5 +26,25 @@ define(['../../build/courtroom'], function(CourtroomValidation) {
 
       expect(courtroom.getDefendantCount()).toBe(2);
     });
+
+    it("should return defendant with correct name for 'prop'", function() {
+      var expectedName = "prop";
+
+      var courtroom = new Courtroom();
+
+      var prop = courtroom.trial(expectedName);
+
+      expect(prop.getName()).toBe(expectedName);
+    });
+
+    it("should return defendant with correct name for 'anotherprop'", function() {
+      var expectedName = "anotherprop";
+
+      var courtroom = new Courtroom();
+
+      var prop = courtroom.trial(expectedName);
+
+      expect(prop.getName()).toBe(expectedName);
+    });
   });
 });
