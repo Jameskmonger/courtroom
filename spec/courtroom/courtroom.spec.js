@@ -9,7 +9,7 @@ define(['../../build/courtroom'], function(CourtroomValidation) {
     });
   });
 
-  describe("Place defendant on trial", function() {
+  describe("Place property on trial", function() {
     it("should have one defendant when one trialled", function() {
       var courtroom = new Courtroom();
 
