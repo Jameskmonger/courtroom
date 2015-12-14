@@ -2,7 +2,7 @@
 // Generated on Thu Dec 10 2015 00:03:13 GMT+0000 (GMT)
 
 module.exports = function(config) {
-  config.set({
+  var configuration = ({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -73,5 +73,11 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity
-  })
+  });
+  
+  if(process.env.TRAVIS){
+    configuration.browsers = ['PhantomJS'];
+  }
+  
+  config.set(configuration);
 }
