@@ -8,5 +8,3 @@ before_install:
   - "npm install karma-phantomjs-launcher"
   - "npm install -g typescript"
   - "tsc src/**/*.ts --module amd --outDir build/"
-after_success:
-  - coveralls
