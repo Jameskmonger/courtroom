@@ -23,6 +23,7 @@
     "files": [
         "courtroom/courtroom.ts",
         "courtroom/defendant.ts",
+        "courtroom/juries/isjury.ts",
         "courtroom/juries/jury.ts",
         "courtroom/juries/notjury.ts",
         "courtroom/lawcontainer.ts"
