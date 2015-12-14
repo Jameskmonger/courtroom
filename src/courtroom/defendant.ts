@@ -1,15 +1,13 @@
+import LawContainer = require("./lawcontainer");
+
 export class Defendant {
-  private accusations: Array<any>;
+  public laws: LawContainer.LawContainer;
 
   constructor(private name: string) {
-    this.accusations = [];
+    this.laws = new LawContainer.LawContainer();
   }
 
   public getName(): string {
     return this.name;
-  }
-
-  public getAccusations(): Array<any> {
-    return this.accusations;
   }
 }
