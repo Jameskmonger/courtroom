@@ -8,14 +8,4 @@ define(['../../build/courtroom'], function(CourtroomValidation) {
       expect(courtroom.defendantCount).toBe(0);
     });
   });
-
-  describe("Trial", function() {
-    it("has one defendant when one is trialled", function() {
-      var courtroom = new Courtroom();
-
-      courtroom.trial("num");
-
-      expect(courtroom.defendantCount).toBe(1);
-    });
-  });
 });
