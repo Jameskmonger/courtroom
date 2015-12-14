@@ -7,4 +7,4 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - "npm install karma-phantomjs-launcher"
   - "npm install -g typescript"
-  - "tsc -p /src/"
+  - "tsc src/**/*.js --module amd --outDir build/"
