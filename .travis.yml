@@ -6,4 +6,5 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "npm install karma-phantomjs-launcher"
+  - "npm install -g typescript"
   - "tsc -p /src/"
