@@ -21,7 +21,7 @@ define(['../../build/defendant'], function(DefendantModule) {
     it("has no laws", function() {
       var d = new Defendant("prop");
 
-      expect(d.getLaws().length).toBe(0);
+      expect(d.laws.count()).toBe(0);
     });
   });
 
@@ -31,7 +31,7 @@ define(['../../build/defendant'], function(DefendantModule) {
 
       d.laws.not(null);
 
-      expect(d.getLaws().length).toBe(1);
+      expect(d.laws.count()).toBe(1);
     });
 
     it("has laws count 2 when applied twice", function() {
@@ -40,7 +40,7 @@ define(['../../build/defendant'], function(DefendantModule) {
       d.laws.not(null);
       d.laws.not(null);
 
-      expect(d.getLaws().length).toBe(2);
+      expect(d.laws.count()).toBe(2);
     });
   });
 });
