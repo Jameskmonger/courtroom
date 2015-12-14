@@ -22,7 +22,7 @@
     ],
     "files": [
         "courtroom/courtroom.ts",
-        "courtroom/trial.ts"
+        "courtroom/defendant.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

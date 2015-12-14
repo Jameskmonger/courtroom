@@ -1,4 +1,4 @@
-export class Trial {
+export class Defendant {
   private accusations: Array<any>;
 
   constructor(private name: string) {

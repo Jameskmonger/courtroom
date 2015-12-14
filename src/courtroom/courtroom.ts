@@ -1,14 +1,14 @@
-import Trial = require("./trial");
+import Defendant = require("./defendant");
 
 export class Courtroom {
-  private defendants: Array<Trial.Trial>;
+  private defendants: Array<Defendant.Defendant>;
 
   constructor() {
     this.defendants = [];
   }
 
   public trial(name: string) {
-    this.defendants.push(new Trial.Trial(name));
+    this.defendants.push(new Defendant.Defendant(name));
   }
 
   public getDefendantCount(): number {
