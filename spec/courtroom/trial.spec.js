@@ -1,7 +1,7 @@
 define(['../../build/trial'], function(TrialModule) {
   var Trial = TrialModule.Trial;
 
-  describe("Constructor", function() {
+  describe("Trial Constructor", function() {
     it("stores the name correctly for 'property'", function() {
       var expectedName = "property";
 
