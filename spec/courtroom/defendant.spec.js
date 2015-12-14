@@ -18,28 +18,29 @@ define(['../../build/defendant'], function(DefendantModule) {
       expect(d.getName()).toBe(expectedName);
     });
 
-    it("has no accusations", function() {
+    it("has no laws", function() {
       var d = new Defendant("prop");
 
-      expect(d.getAccusations().length).toBe(0);
+      expect(d.getLaws().length).toBe(0);
     });
   });
 
-  describe("Applying accusations", function() {
-    it("has accusation count 1 when applied once", function() {
+  describe("Applying laws", function() {
+    it("has laws count 1 when applied once", function() {
       var d = new Defendant("prop");
 
-      d.accuse.not(null);
+      d.laws.not(null);
 
-      expect(d.getAccusations().length).toBe(1);
+      expect(d.getLaws().length).toBe(1);
     });
 
-    it("has accusation count 1 when applied once", function() {
+    it("has laws count 2 when applied twice", function() {
       var d = new Defendant("prop");
 
-      d.accuse.not(null);
+      d.laws.not(null);
+      d.laws.not(null);
 
-      expect(d.getAccusations().length).toBe(1);
+      expect(d.getLaws().length).toBe(2);
     });
   });
 });

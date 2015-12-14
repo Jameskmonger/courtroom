@@ -1,15 +1,15 @@
 export class Defendant {
-  private accusations: Array<any>;
+  private laws: Array<any>;
 
   constructor(private name: string) {
-    this.accusations = [];
+    this.laws = [];
   }
 
   public getName(): string {
     return this.name;
   }
 
-  public getAccusations(): Array<any> {
-    return this.accusations;
+  public getLaws(): Array<any> {
+    return this.laws;
   }
 }
