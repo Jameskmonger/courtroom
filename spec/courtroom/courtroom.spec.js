@@ -5,7 +5,26 @@ define(['../../build/courtroom'], function(CourtroomValidation) {
     it("does not have any defendants", function() {
       var courtroom = new Courtroom();
 
-      expect(courtroom.defendantCount).toBe(0);
+      expect(courtroom.getDefendantCount()).toBe(0);
+    });
+  });
+
+  describe("Place defendant on trial", function() {
+    it("should have one defendant when one trialled", function() {
+      var courtroom = new Courtroom();
+
+      courtroom.trial("prop");
+
+      expect(courtroom.getDefendantCount()).toBe(1);
+    });
+
+    it("should have two defendants when two trialled", function() {
+      var courtroom = new Courtroom();
+
+      courtroom.trial("prop");
+      courtroom.trial("anotherprop");
+
+      expect(courtroom.getDefendantCount()).toBe(2);
     });
   });
 });
