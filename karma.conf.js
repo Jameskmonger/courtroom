@@ -36,11 +36,11 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec', 'coverage', 'coveralls'],
+    reporters: ['spec', 'coverage'],
 
     coverageReporter: {
-      type: "lcov",
-      dir: "coverage/"
+		reporters: [{type: 'lcov'}, {type: 'text'}],
+		dir: "coverage/"
     },
 
     // web server port
@@ -76,6 +76,7 @@ module.exports = function(config) {
 
   if(process.env.TRAVIS){
     configuration.browsers = ['PhantomJS'];
+	configuration.reporters.push('coveralls');
   }
 
   config.set(configuration);
