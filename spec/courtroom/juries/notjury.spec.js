@@ -82,4 +82,12 @@ define(['../../../build/juries/notjury'], function(NotJuryModule) {
       expect(a.verdict(dummy)).toBe(false);
     });
   });
+
+  describe("NotJury verdict tests (different types)", function() {
+    it("should return 'true' for int vs string", function() {
+      var a = new NotJury(3);
+
+      expect(a.verdict("3")).toBe(true)
+    });
+  });
 });
