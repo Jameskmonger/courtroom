@@ -11,4 +11,4 @@ Validation-tastic :no_entry:
     `npm install`
 3. Compile the TypeScript - they will automatically be placed into the /build/ folder.
 4. Run the tests:
-    `karma start`
+    `grunt test`
