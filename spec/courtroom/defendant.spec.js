@@ -24,4 +24,22 @@ define(['../../build/defendant'], function(DefendantModule) {
       expect(d.getAccusations().length).toBe(0);
     });
   });
+
+  describe("Applying accusations", function() {
+    it("has accusation count 1 when applied once", function() {
+      var d = new Defendant("prop");
+
+      d.accuse.not(null);
+
+      expect(d.getAccusations().length).toBe(1);
+    });
+
+    it("has accusation count 1 when applied once", function() {
+      var d = new Defendant("prop");
+
+      d.accuse.not(null);
+
+      expect(d.getAccusations().length).toBe(1);
+    });
+  });
 });
