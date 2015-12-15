@@ -94,4 +94,22 @@ describe("Courtroom Judge", function() {
 
     expect(issues.length).toBe(1);
   });
+
+  it("should return an array with one issue with correct details when no laws broken", function() {
+    var courtroom = new Courtroom();
+
+    var test = courtroom.trial("test");
+
+    test.laws.match.is("test");
+
+    var dummy = {
+      test: "nottest",
+      other: "bla"
+    };
+
+    var issues = courtroom.judge(dummy);
+
+    expect(issues.length).toBe(1);
+    expect(issues[0]).toBe("test does not comply for value nottest");
+  });
 });

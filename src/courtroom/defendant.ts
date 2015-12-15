@@ -18,7 +18,7 @@ export class Defendant {
       var complies = matchJury.verdict(value);
 
       if (!complies) {
-        issues.push(this.getName() + " does not comply with " + matchJury + " for value " + value);
+        issues.push(this.getName() + " does not comply for value " + value);
       }
     }
 
