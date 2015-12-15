@@ -26,7 +26,10 @@
         "courtroom/juries/isjury.ts",
         "courtroom/juries/jury.ts",
         "courtroom/juries/notjury.ts",
-        "courtroom/lawcontainer.ts"
+        "courtroom/lawbook.ts",
+        "courtroom/laws/lawcontainer.ts",
+        "courtroom/laws/matchlawcontainer.ts",
+        "courtroom/laws/stringlawcontainer.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

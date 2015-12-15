@@ -1,10 +1,10 @@
-import LawContainer = require("./lawcontainer");
+import Lawbook = require("./lawbook");
 
 export class Defendant {
-  public laws: LawContainer.LawContainer;
+  public laws: Lawbook.Lawbook;
 
   constructor(private name: string) {
-    this.laws = new LawContainer.LawContainer();
+    this.laws = new Lawbook.Lawbook();
   }
 
   public getName(): string {

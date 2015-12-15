@@ -1,7 +1,8 @@
-import NotJury = require("./juries/notjury");
-import Jury = require("./juries/jury");
+import NotJury = require("../juries/notjury");
+import Jury = require("../juries/jury");
+import LawContainer = require("./lawcontainer");
 
-export class LawContainer {
+export class MatchLawContainer implements LawContainer.LawContainer {
   private jury: Array<Jury.Jury>;
 
   constructor() {

@@ -24,7 +24,8 @@
         "courtroom/courtroom.spec.ts",
         "courtroom/defendant.spec.ts",
         "courtroom/juries/isjury.spec.ts",
-        "courtroom/juries/notjury.spec.ts"
+        "courtroom/juries/notjury.spec.ts",
+        "courtroom/laws/stringlawcontainer.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

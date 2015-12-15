@@ -32,7 +32,7 @@ describe("Applying laws", function() {
   it("has laws count 1 when applied once", function() {
     var d = new Defendant("prop");
 
-    d.laws.not(null);
+    d.laws.match.not(null);
 
     expect(d.laws.count()).toBe(1);
   });
@@ -40,8 +40,8 @@ describe("Applying laws", function() {
   it("has laws count 2 when applied twice", function() {
     var d = new Defendant("prop");
 
-    d.laws.not(null);
-    d.laws.not(null);
+    d.laws.match.not(null);
+    d.laws.match.not(null);
 
     expect(d.laws.count()).toBe(2);
   });
