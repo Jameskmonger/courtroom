@@ -16,10 +16,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.js',
-      {pattern: 'build/*.js', included: false},
-      {pattern: 'build/**/*.js', included: false},
-      {pattern: 'spec/courtroom/*.spec.js', included: false},
-      {pattern: 'spec/courtroom/juries/*.spec.js', included: false}
+      {pattern: 'test-build/src/courtroom/*.js', included: false},
+      {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
+      {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
+      {pattern: 'test-build/spec/courtroom/juries/*.spec.js', included: false}
     ],
 
 
@@ -81,6 +81,10 @@ module.exports = function(config) {
     configuration.browsers = ['PhantomJS'];
     configuration.reporters.push('coveralls');
     configuration.singleRun = true;
+    configuration.preprocessors = {
+      'test-build/src/courtroom/*.js': ['coverage'],
+      'test-build/src/courtroom/juries/*.js': ['coverage']
+    };
   }
 
   config.set(configuration);
