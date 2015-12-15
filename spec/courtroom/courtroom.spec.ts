@@ -98,18 +98,21 @@ describe("Courtroom Judge", function() {
   it("should return an array with one issue with correct details when no laws broken", function() {
     var courtroom = new Courtroom();
 
-    var test = courtroom.trial("test");
+    var test = courtroom.trial("prop_name");
 
-    test.laws.match.is("test");
+    test.laws.match.is("expected");
 
     var dummy = {
-      test: "nottest",
+      prop_name: "actual",
       other: "bla"
     };
 
     var issues = courtroom.judge(dummy);
-
     expect(issues.length).toBe(1);
-    expect(issues[0]).toBe("test does not comply for value nottest");
+
+    var issue = issues[0];
+    expect(issue.property).toBe("prop_name");
+    expect(issue.jury).toBe("match.is");
+    expect(issue.value).toBe("expected");
   });
 });

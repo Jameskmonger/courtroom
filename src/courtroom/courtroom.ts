@@ -19,8 +19,8 @@ export class Courtroom {
     return this.defendants.length;
   }
 
-  public judge(object: any): Array<string> {
-    var issues: Array<string> = [];
+  public judge(object: any): Array<any> {
+    var issues: Array<any> = [];
 
     for (var property in object) {
       var defendant = this.defendants.filter(f => f.getName() === property)[0];

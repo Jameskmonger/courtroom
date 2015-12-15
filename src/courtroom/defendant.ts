@@ -11,14 +11,20 @@ export class Defendant {
     return this.name;
   }
 
-  public judge(value: any): Array<string> {
-    var issues: Array<string> = [];
+  public judge(value: any): Array<any> {
+    var issues: Array<any> = [];
 
     for (var matchJury of this.laws.match.getJuries()) {
       var complies = matchJury.verdict(value);
 
       if (!complies) {
-        issues.push(this.getName() + " does not comply for value " + value);
+        var issue = {
+          property: this.getName(),
+          jury: matchJury.getName(),
+          value: value
+        };
+
+        issues.push(issue);
       }
     }
 
