@@ -18,4 +18,8 @@ export class Courtroom {
   public getDefendantCount(): number {
     return this.defendants.length;
   }
+
+  public judge(object: any): Array<string> {
+    return [];
+  }
 }

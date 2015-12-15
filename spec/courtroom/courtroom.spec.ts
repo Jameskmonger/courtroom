@@ -49,4 +49,32 @@ describe("Place property on trial", function() {
 
     expect(prop.getName()).toBe(expectedName);
   });
+
+  it("should return a defendant that we can apply laws to", function() {
+    var courtroom = new Courtroom();
+
+    var defendant = courtroom.trial("test");
+
+    defendant.laws.match.not("nottest");
+
+    expect(defendant.laws.count()).toBe(1);
+  });
+});
+
+describe("Courtroom Judge", function() {
+  it("should return an empty array when no laws broken", function() {
+    var courtroom = new Courtroom();
+
+    var test = courtroom.trial("test");
+
+    test.laws.match.is("test");
+
+    var dummy = {
+      test: "test"
+    };
+
+    var issues = courtroom.judge(dummy);
+
+    expect(issues.length).toBe(0);
+  });
 });
