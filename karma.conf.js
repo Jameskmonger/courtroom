@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
+      'test-main.ts',
       {pattern: 'test-build/src/courtroom/*.js', included: false},
       {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
       {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
