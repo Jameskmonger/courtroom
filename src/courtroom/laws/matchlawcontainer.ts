@@ -1,3 +1,4 @@
+import IsJury = require("../juries/isjury");
 import NotJury = require("../juries/notjury");
 import Jury = require("../juries/jury");
 import LawContainer = require("./lawcontainer");
@@ -11,6 +12,10 @@ export class MatchLawContainer implements LawContainer.LawContainer {
 
   public not(compare: any) {
     this.jury.push(new NotJury.NotJury(compare));
+  }
+
+  public is(compare: any) {
+    this.jury.push(new IsJury.IsJury(compare));
   }
 
   public count(): number {

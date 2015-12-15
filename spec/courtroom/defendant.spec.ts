@@ -29,7 +29,7 @@ describe("Defendant Constructor", function() {
 });
 
 describe("Applying laws", function() {
-  it("has laws count 1 when applied once", function() {
+  it("has laws count 1 when match.not applied once", function() {
     var d = new Defendant("prop");
 
     d.laws.match.not(null);
@@ -37,11 +37,28 @@ describe("Applying laws", function() {
     expect(d.laws.count()).toBe(1);
   });
 
-  it("has laws count 2 when applied twice", function() {
+  it("has laws count 2 when match.not applied twice", function() {
     var d = new Defendant("prop");
 
     d.laws.match.not(null);
     d.laws.match.not(null);
+
+    expect(d.laws.count()).toBe(2);
+  });
+
+  it("has laws count 1 when match.is applied once", function() {
+    var d = new Defendant("prop");
+
+    d.laws.match.is(null);
+
+    expect(d.laws.count()).toBe(1);
+  });
+
+  it("has laws count 2 when match.is applied twice", function() {
+    var d = new Defendant("prop");
+
+    d.laws.match.is(null);
+    d.laws.match.is(null);
 
     expect(d.laws.count()).toBe(2);
   });
