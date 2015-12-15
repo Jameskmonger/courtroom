@@ -13,7 +13,7 @@ export class NotJury implements Jury.Jury {
 
   public getDetails(): any {
     return {
-      expected: this.compare
+      prohibited: this.compare
     }
   }
 }

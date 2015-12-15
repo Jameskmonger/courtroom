@@ -10,4 +10,10 @@ describe("StringLawContainer constructor", function() {
 
     expect(s.count()).toBe(0);
   });
+
+  it("should have no juries when initialised", function() {
+    var s = new StringLawContainer();
+
+    expect(s.getJuries()).toEqual([]);
+  });
 });
