@@ -16,10 +16,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.js',
-      {pattern: 'test-build/spec/courtroom/*.js', included: false},
-      {pattern: 'test-build/spec/courtroom/**/*.js', included: false},
-      {pattern: 'test-build/src/courtroom/*.spec.js', included: false},
-      {pattern: 'test-build/src/courtroom/courtroom/juries/*.spec.js', included: false}
+      {pattern: 'test-build/src/courtroom/*.js', included: false},
+      {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
+      {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
+      {pattern: 'test-build/spec/courtroom/courtroom/juries/*.spec.js', included: false}
     ],
 
 
