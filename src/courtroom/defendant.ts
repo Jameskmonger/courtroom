@@ -21,7 +21,8 @@ export class Defendant {
         var issue = {
           property: this.getName(),
           jury: matchJury.getName(),
-          value: value
+          value: value,
+          details: matchJury.getDetails()
         };
 
         issues.push(issue);

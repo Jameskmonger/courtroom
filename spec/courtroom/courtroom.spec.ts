@@ -78,32 +78,18 @@ describe("Courtroom Judge", function() {
     expect(issues.length).toBe(0);
   });
 
-  it("should return an array with one issue when no laws broken", function() {
-    var courtroom = new Courtroom();
+  it("should return an array with one issue with correct details when one law broken", function() {
+    const expectedValue = "expectedValue",
+          actualValue = "actualValue";
 
-    var test = courtroom.trial("test");
-
-    test.laws.match.is("test");
-
-    var dummy = {
-      test: "nottest",
-      other: "bla"
-    };
-
-    var issues = courtroom.judge(dummy);
-
-    expect(issues.length).toBe(1);
-  });
-
-  it("should return an array with one issue with correct details when no laws broken", function() {
     var courtroom = new Courtroom();
 
     var test = courtroom.trial("prop_name");
 
-    test.laws.match.is("expected");
+    test.laws.match.is(expectedValue);
 
     var dummy = {
-      prop_name: "actual",
+      prop_name: actualValue,
       other: "bla"
     };
 
@@ -113,6 +99,7 @@ describe("Courtroom Judge", function() {
     var issue = issues[0];
     expect(issue.property).toBe("prop_name");
     expect(issue.jury).toBe("match.is");
-    expect(issue.value).toBe("expected");
+    expect(issue.value).toBe(actualValue);
+    expect(issue.details).toEqual({ expected: expectedValue });
   });
 });

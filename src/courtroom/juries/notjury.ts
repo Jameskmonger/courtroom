@@ -10,4 +10,10 @@ export class NotJury implements Jury.Jury {
   public getName(): string {
     return "match.not";
   }
+
+  public getDetails(): any {
+    return {
+      expected: this.compare
+    }
+  }
 }

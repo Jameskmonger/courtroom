@@ -10,4 +10,10 @@ export class IsJury implements Jury.Jury {
   public getName(): string {
     return "match.is";
   }
+
+  public getDetails(): any {
+    return {
+      expected: this.compare
+    }
+  }
 }
