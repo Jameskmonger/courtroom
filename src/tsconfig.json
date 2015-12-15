@@ -26,6 +26,7 @@
         "courtroom/juries/isjury.ts",
         "courtroom/juries/jury.ts",
         "courtroom/juries/notjury.ts",
+        "courtroom/juries/string.contains.jury.ts",
         "courtroom/lawbook.ts",
         "courtroom/laws/lawcontainer.ts",
         "courtroom/laws/matchlawcontainer.ts",
