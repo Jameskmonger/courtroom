@@ -19,7 +19,7 @@ module.exports = function(config) {
       {pattern: 'test-build/src/courtroom/*.js', included: false},
       {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
       {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
-      {pattern: 'test-build/spec/courtroom/courtroom/juries/*.spec.js', included: false}
+      {pattern: 'test-build/spec/courtroom/juries/*.spec.js', included: false}
     ],
 
 
