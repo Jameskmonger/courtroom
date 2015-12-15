@@ -31,8 +31,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'build/*.js': ['coverage'],
-      'build/juries/*.js': ['coverage']
+      'test-build/src/courtroom/*.js': ['coverage'],
+      'test-build/src/courtroom/juries/*.js': ['coverage']
     },
 
 
@@ -81,10 +81,6 @@ module.exports = function(config) {
     configuration.browsers = ['PhantomJS'];
     configuration.reporters.push('coveralls');
     configuration.singleRun = true;
-    configuration.preprocessors = {
-      'test-build/src/courtroom/*.js': ['coverage'],
-      'test-build/src/courtroom/juries/*.js': ['coverage']
-    };
   }
 
   config.set(configuration);
