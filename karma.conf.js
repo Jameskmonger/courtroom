@@ -81,6 +81,10 @@ module.exports = function(config) {
     configuration.browsers = ['PhantomJS'];
     configuration.reporters.push('coveralls');
     configuration.singleRun = true;
+    configuration.preprocessors = {
+      'test-build/src/courtroom/*.js': ['coverage'],
+      'test-build/src/courtroom/juries/*.js': ['coverage']
+    };
   }
 
   config.set(configuration);
