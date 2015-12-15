@@ -1,6 +1,7 @@
-///<reference path="../../../typings/jasmine/jasmine.d.ts" />
+import IsJuryModule = require("../../src/courtroom/juries/isjury");
+///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import { IsJury } from "../../../build/juries/isjury";
+const IsJury = IsJuryModule.IsJury;
 
 describe("IsJury verdict tests (null and undefined)", function() {
   it("should return 'false' when not null and checking for null", function() {

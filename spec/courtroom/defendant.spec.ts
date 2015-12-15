@@ -1,6 +1,7 @@
+import DefendantModule = require("../../src/courtroom/defendant");
 ///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import { Defendant } from "../../build/defendant";
+const Defendant = DefendantModule.Defendant;
 
 describe("Defendant Constructor", function() {
   it("stores the name correctly for 'property'", function() {

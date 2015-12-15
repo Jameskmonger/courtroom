@@ -1,6 +1,7 @@
+import CourtroomModule = require("../../src/courtroom/courtroom");
 ///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import { Courtroom } from "../../build/courtroom";
+const Courtroom = CourtroomModule.Courtroom;
 
 describe("Courtroom Constructor", function() {
   it("does not have any defendants", function() {

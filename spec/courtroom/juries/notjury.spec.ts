@@ -1,6 +1,7 @@
-///<reference path="../../../typings/jasmine/jasmine.d.ts" />
+import NotJuryModule = require("../../src/courtroom/juries/notjury");
+///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import { NotJury } from "../../../build/juries/notjury";
+const NotJury = NotJuryModule.NotJury;
 
 describe("NotJury verdict tests (null and undefined)", function() {
   it("should return 'true' when not null and checking for not null", function() {
