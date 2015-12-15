@@ -20,6 +20,16 @@ export class Courtroom {
   }
 
   public judge(object: any): Array<string> {
-    return [];
+    var issues: Array<string> = [];
+
+    for (var property in object) {
+      var defendant = this.defendants.filter(f => f.getName() === property)[0];
+
+      if (defendant !== undefined) {
+        Array.prototype.push.apply(issues, defendant.judge(object[property]));
+      }
+    }
+
+    return issues;
   }
 }

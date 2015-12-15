@@ -21,4 +21,8 @@ export class MatchLawContainer implements LawContainer.LawContainer {
   public count(): number {
     return this.jury.length;
   }
+
+  public getJuries(): Array<Jury.Jury> {
+    return this.jury;
+  }
 }
