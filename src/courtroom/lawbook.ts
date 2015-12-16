@@ -1,16 +1,27 @@
-import MatchLawContainer = require("./laws/matchlawcontainer");
-import StringLawContainer = require("./laws/stringlawcontainer");
+import Jury = require("./juries/jury");
+import NotJury = require("./juries/notjury");
+import IsJury = require("./juries/isjury");
 
 export class Lawbook {
-  public match: MatchLawContainer.MatchLawContainer;
-  public string: StringLawContainer.StringLawContainer;
+  private juries: Array<Jury.Jury>;
 
   constructor() {
-    this.match = new MatchLawContainer.MatchLawContainer();
-    this.string = new StringLawContainer.StringLawContainer();
+    this.juries = [];
   }
 
-  public count(): number {
-    return (this.match.count() + this.string.count());
+  public not(compare: any) {
+    this.juries.push(new NotJury.NotJury(compare));
+  }
+
+  public is(compare: any) {
+    this.juries.push(new IsJury.IsJury(compare));
+  }
+
+  public getJuryCount(): number {
+    return (this.juries.length);
+  }
+
+  public getJuries(): Array<Jury.Jury> {
+    return this.juries;
   }
 }

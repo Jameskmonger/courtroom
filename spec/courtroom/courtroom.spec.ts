@@ -55,9 +55,9 @@ describe("Place property on trial", function() {
 
     var defendant = courtroom.trial("test");
 
-    defendant.laws.match.not("nottest");
+    defendant.laws.not("nottest");
 
-    expect(defendant.laws.count()).toBe(1);
+    expect(defendant.laws.getJuryCount()).toBe(1);
   });
 });
 
@@ -67,7 +67,7 @@ describe("Courtroom Judge", function() {
 
     var test = courtroom.trial("test");
 
-    test.laws.match.is("test");
+    test.laws.is("test");
 
     var dummy = {
       test: "test"
@@ -86,7 +86,7 @@ describe("Courtroom Judge", function() {
 
     var test = courtroom.trial("prop_name");
 
-    test.laws.match.is(expectedValue);
+    test.laws.is(expectedValue);
 
     var dummy = {
       prop_name: actualValue
@@ -110,7 +110,7 @@ describe("Courtroom Judge", function() {
 
     var test = courtroom.trial("prop_name");
 
-    test.laws.match.not(prohibitedValue);
+    test.laws.not(prohibitedValue);
 
     var dummy = {
       prop_name: actualValue

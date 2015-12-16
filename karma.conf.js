@@ -18,10 +18,8 @@ module.exports = function(config) {
       'test-main.ts',
       {pattern: 'test-build/src/courtroom/*.js', included: false},
       {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
-      {pattern: 'test-build/src/courtroom/laws/*.js', included: false},
       {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
-      {pattern: 'test-build/spec/courtroom/juries/*.spec.js', included: false},
-      {pattern: 'test-build/spec/courtroom/laws/*.spec.js', included: false}
+      {pattern: 'test-build/spec/courtroom/juries/*.spec.js', included: false}
     ],
 
 
@@ -34,8 +32,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'test-build/src/courtroom/*.js': ['coverage'],
-      'test-build/src/courtroom/juries/*.js': ['coverage'],
-      'test-build/src/courtroom/laws/*.js': ['coverage']
+      'test-build/src/courtroom/juries/*.js': ['coverage']
     },
 
 
