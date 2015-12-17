@@ -25,7 +25,8 @@
         "courtroom/defendant.spec.ts",
         "courtroom/juries/isjury.spec.ts",
         "courtroom/juries/notjury.spec.ts",
-        "courtroom/juries/string.contains.spec.ts"
+        "courtroom/juries/string.contains.spec.ts",
+        "courtroom/juries/string.maxLength.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
