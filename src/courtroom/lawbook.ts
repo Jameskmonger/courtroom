@@ -1,6 +1,7 @@
 import Jury = require("./juries/jury");
 import NotJury = require("./juries/notjury");
 import IsJury = require("./juries/isjury");
+import StringContainsJury = require("./juries/string.contains.jury");
 
 export class Lawbook {
   private juries: Array<Jury.Jury>;
@@ -15,6 +16,10 @@ export class Lawbook {
 
   public is(compare: any) {
     this.juries.push(new IsJury.IsJury(compare));
+  }
+
+  public contains(requirement: string) {
+    this.juries.push(new StringContainsJury.ContainsJury(requirement));
   }
 
   public getJuryCount(): number {
