@@ -35,52 +35,123 @@
 
     <div class="container">
       <section id="main_content">
-        <h3>Demo</h3>
+        <h1>Courtroom</h1>
 
-        <form>
-          Min 5 characters: <br>
-          <div id="min_5"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Max 5 characters:<br>
-          <div id="max_5"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Must contain 'hello': <br>
-          <div id="contains_hello"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Must equal 'james':<br>
-          <div id="equals_james"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Must not equal 'paulo':<br>
-          <div id="not_equals_paulo"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Between 5 and 10 characters:<br>
-          <div id="between_5_10"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-          <br>
-          Contains 'james', ' ' and 'monger':<br>
-          <div id="contains_james_space_monger"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
-        </form>
-      </section>
-      <br>
-      <section id="code">
-        <h3>Code</h3>
-        <p>The code for the five examples above is super clean and super easy!</p>
+        <p>
+          Courtroom is a lightweight, verbose validation system written in TypeScript. It has an easy to understand syntax, using
+          the metaphor of a real-life courtroom to help simplify the procedure.
+        </p>
+
+        <p>
+          There are a few examples below showing some of the different types of '<span class="pl-ent">laws</span>' <span class="pl-id">(rules)</span>
+          you can apply to your '<span class="pl-ent">defendants</span>' <span class="pl-id">(properties)</span> with the
+          '<span class="pl-ent">courtroom</span>' <span class="pl-id">(object validator)</span>.
+        </p>
+
+        <p>
+          You can apply laws one-at-a-time, such as saying that the field '<span class="pl-v">password</span>' must have a minimum length of 8 characters:
+        </p>
 
 <pre class="prettyprint linenums">
+  c.trial("password").laws.minLength(8);
+</pre>
+
+        <p>
+          Or you can chain them up, like saying that that the field '<span class="pl-v">favourite_day</span>' must contain the word '<span class="pl-ent">day</span>'
+          and must <span class="pl-ii">not</span> be '<span class="pl-ent">Tuesday</span>'.
+        </p>
+
+<pre class="prettyprint linenums">
+  c.trial("favourite_day").laws.contains("day").not("Tuesday");
+</pre>
+
+</section>
+
+<section id="code">
+        <h2>Interactive demos - with code!</h2>
+
+<div>
+<form>
+  Min 5 characters: <br>
+  <div id="min_5"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("min_5").laws.minLength(5);
-  
+</pre>
+</div>
+
+<br>
+
+<div>
+<form>
+  Max 5 characters:<br>
+  <div id="max_5"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("max_5").laws.maxLength(5);
+</pre>
+</div>
 
+<br>
+
+<div>
+<form>
+  Must contain '<span class="pl-ent">hello</span>': <br>
+  <div id="contains_hello"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("contains_hello").laws.contains("hello");
+</pre>
+</div>
 
+<br>
+
+<div>
+<form>
+  Must equal '<span class="pl-ent">james</span>':<br>
+  <div id="equals_james"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("equals_james").laws.is("james");
+</pre>
+</div>
 
+<br>
+
+<div>
+<form>
+  Must not equal '<span class="pl-ent">paulo</span>':<br>
+  <div id="not_equals_paulo"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("not_equals_paulo").laws.not("paulo");
+</pre>
+</div>
 
+<br>
+
+<div>
+<form>
+  Between <span class="pl-k">5</span> and <span class="pl-k">10</span> characters:<br>
+  <div id="between_5_10"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("between_5_10").laws.minLength(5).maxLength(10);
+</pre>
+</div>
 
+<br>
+
+<div>
+<form>
+  Contains '<span class="pl-ent">james</span>', '<span class="pl-ent"> </span>' and '<span class="pl-ent">monger</span>':<br>
+  <div id="contains_james_space_monger"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+</form>
+<pre class="prettyprint linenums">
   c.trial("contains_james_space_monger").laws.contains("james")
       .contains(" ").contains("monger");
 </pre>
+</div>
       </section>
     </div>
 
