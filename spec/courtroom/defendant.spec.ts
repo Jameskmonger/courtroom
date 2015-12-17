@@ -65,7 +65,7 @@ describe("Applying laws", function() {
 });
 
 describe("Chaining laws", function() {
-  it("has the correct law count with 3 same chained", function() {
+  it("has the correct jury count with 3 same chained", function() {
     var d = new Defendant("name");
 
     d.laws.not("simon").not("luke").not("matt");
@@ -73,11 +73,85 @@ describe("Chaining laws", function() {
     expect(d.laws.getJuryCount()).toBe(3);
   });
 
-  it("has the correct law count with 3 different chained", function() {
+  it("has the correct jury count with 3 different chained", function() {
     var d = new Defendant("name");
 
     d.laws.not("simon").contains(" ").maxLength(12);
 
     expect(d.laws.getJuryCount()).toBe(3);
+  });
+
+  it("has the correct jury count with 6 same chained", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").not("luke").not("matt").not("james").not("paulo").not("samantha");
+
+    expect(d.laws.getJuryCount()).toBe(6);
+  });
+
+  it("has the correct jury count with 6 different chained", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").contains(" ").maxLength(12).is("bla").minLength(10).not("rudeword");
+
+    expect(d.laws.getJuryCount()).toBe(6);
+  });
+
+  it("returns no issues when matches all same chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").not("james").not("bob");
+
+    var issues = d.judge("bruce");
+
+    expect(issues).toEqual([]);
+  });
+
+  it("returns no issues when matches all different chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").is("bruce").minLength(4);
+
+    var issues = d.judge("bruce");
+
+    expect(issues).toEqual([]);
+  });
+
+  it("returns one correct issue when breaks one of same chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").not("james").not("bob");
+
+    var issues = d.judge("james");
+
+    var expectedIssue = {
+        property: "name",
+        jury: "match.not",
+        value: "james",
+        details: {
+          prohibited: "james"
+        }
+    };
+
+    expect(issues[0]).toEqual(expectedIssue);
+  });
+
+  it("returns one correct issue when breaks one of different chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").is("bruce").minLength(4);
+
+    var issues = d.judge("notbruce");
+
+    var expectedIssue = {
+        property: "name",
+        jury: "match.is",
+        value: "notbruce",
+        details: {
+          expected: "bruce"
+        }
+    };
+
+    expect(issues[0]).toEqual(expectedIssue);
   });
 });
