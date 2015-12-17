@@ -63,3 +63,21 @@ describe("Applying laws", function() {
     expect(d.laws.getJuryCount()).toBe(2);
   });
 });
+
+describe("Chaining laws", function() {
+  it("has the correct law count with 3 same chained", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").not("luke").not("matt");
+
+    expect(d.laws.getJuryCount()).toBe(3);
+  });
+
+  it("has the correct law count with 3 different chained", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").contains(" ").maxLength(12);
+
+    expect(d.laws.getJuryCount()).toBe(3);
+  });
+});

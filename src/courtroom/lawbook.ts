@@ -12,24 +12,34 @@ export class Lawbook {
     this.juries = [];
   }
 
-  public not(compare: any) {
+  public not(compare: any): Lawbook {
     this.juries.push(new NotJury.NotJury(compare));
+
+    return this;
   }
 
-  public is(compare: any) {
+  public is(compare: any): Lawbook {
     this.juries.push(new IsJury.IsJury(compare));
+
+    return this;
   }
 
-  public contains(requirement: string) {
+  public contains(requirement: string): Lawbook {
     this.juries.push(new StringContainsJury.ContainsJury(requirement));
+
+    return this;
   }
 
-  public minLength(min: number) {
+  public minLength(min: number): Lawbook {
     this.juries.push(new StringMinLengthJury.MinLengthJury(min));
+
+    return this;
   }
 
-  public maxLength(max: number) {
+  public maxLength(max: number): Lawbook {
     this.juries.push(new StringMaxLengthJury.MaxLengthJury(max));
+
+    return this;
   }
 
   public getJuryCount(): number {
