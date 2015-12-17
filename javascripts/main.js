@@ -21,6 +21,8 @@ require(["courtroom/courtroom"], function(CourtroomModule) {
       } else {
         document.querySelector("div#" + s).querySelector("img").src = "images/success.png";
       }
+
+      document.querySelector("div#" + s).querySelector("img").style.cssText = "display: inline;";
     }
   }
 
