@@ -6,4 +6,14 @@ export class IsJury implements Jury.Jury {
   verdict(defendant: any): boolean {
     return (defendant === this.compare);
   }
+
+  public getName(): string {
+    return "match.is";
+  }
+
+  public getDetails(): any {
+    return {
+      expected: this.compare
+    }
+  }
 }

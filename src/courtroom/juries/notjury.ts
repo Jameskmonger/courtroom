@@ -6,4 +6,14 @@ export class NotJury implements Jury.Jury {
   verdict(defendant: any): boolean {
     return (defendant !== this.compare);
   }
+
+  public getName(): string {
+    return "match.not";
+  }
+
+  public getDetails(): any {
+    return {
+      prohibited: this.compare
+    }
+  }
 }
