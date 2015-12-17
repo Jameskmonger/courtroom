@@ -52,6 +52,12 @@
           <br>
           Must not equal 'paulo':<br>
           <div id="not_equals_paulo"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+          <br>
+          Between 5 and 10 characters:<br>
+          <div id="between_5_10"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
+          <br>
+          Contains 'james', ' ' and 'monger':<br>
+          <div id="contains_james_space_monger"><input type="text"> <img src="images/failed.png" style="display: none;"></div>
         </form>
       </section>
       <br>
@@ -60,11 +66,20 @@
         <p>The code for the five examples above is super clean and super easy!</p>
 
 <pre class="prettyprint linenums">
-    c.trial("min_5").laws.minLength(5);
-    c.trial("max_5").laws.maxLength(5);
-    c.trial("contains_hello").laws.contains("hello");
-    c.trial("equals_james").laws.is("james");
-    c.trial("not_equals_paulo").laws.not("paulo");
+  c.trial("min_5").laws.minLength(5);
+  
+  c.trial("max_5").laws.maxLength(5);
+
+  c.trial("contains_hello").laws.contains("hello");
+
+  c.trial("equals_james").laws.is("james");
+
+  c.trial("not_equals_paulo").laws.not("paulo");
+
+  c.trial("between_5_10").laws.minLength(5).maxLength(10);
+
+  c.trial("contains_james_space_monger").laws.contains("james")
+      .contains(" ").contains("monger");
 </pre>
       </section>
     </div>
