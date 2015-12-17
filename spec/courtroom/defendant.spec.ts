@@ -154,4 +154,64 @@ describe("Chaining laws", function() {
 
     expect(issues[0]).toEqual(expectedIssue);
   });
+
+  it("returns two correct issues when breaks two of same chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").contains("a").not("bob");
+
+    var issues = d.judge("simon");
+
+    var expectedIssueFirst = {
+        property: "name",
+        jury: "match.not",
+        value: "simon",
+        details: {
+          prohibited: "simon"
+        }
+    };
+
+    var expectedIssueSecond = {
+        property: "name",
+        jury: "string.contains",
+        value: "simon",
+        details: {
+          required: "a"
+        }
+    };
+
+    var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
+
+    expect(issues).toEqual(expectedIssues);
+  });
+
+  it("returns two correct issues when breaks two of different chained laws", function() {
+    var d = new Defendant("name");
+
+    d.laws.not("simon").is("bruce").minLength(4);
+
+    var issues = d.judge("simon");
+
+    var expectedIssueFirst = {
+        property: "name",
+        jury: "match.not",
+        value: "simon",
+        details: {
+          prohibited: "simon"
+        }
+    };
+
+    var expectedIssueSecond = {
+        property: "name",
+        jury: "match.is",
+        value: "simon",
+        details: {
+          expected: "bruce"
+        }
+    };
+
+    var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
+
+    expect(issues).toEqual(expectedIssues);
+  });
 });
