@@ -5,18 +5,23 @@ define(["require", "exports", "./juries/notjury", "./juries/isjury", "./juries/s
         }
         Lawbook.prototype.not = function (compare) {
             this.juries.push(new NotJury.NotJury(compare));
+            return this;
         };
         Lawbook.prototype.is = function (compare) {
             this.juries.push(new IsJury.IsJury(compare));
+            return this;
         };
         Lawbook.prototype.contains = function (requirement) {
             this.juries.push(new StringContainsJury.ContainsJury(requirement));
+            return this;
         };
         Lawbook.prototype.minLength = function (min) {
             this.juries.push(new StringMinLengthJury.MinLengthJury(min));
+            return this;
         };
         Lawbook.prototype.maxLength = function (max) {
             this.juries.push(new StringMaxLengthJury.MaxLengthJury(max));
+            return this;
         };
         Lawbook.prototype.getJuryCount = function () {
             return (this.juries.length);
