@@ -28,6 +28,7 @@
         "courtroom/juries/notjury.ts",
         "courtroom/juries/string.contains.jury.ts",
         "courtroom/juries/string.maxLength.jury.ts",
+        "courtroom/juries/string.minLength.jury.ts",
         "courtroom/lawbook.ts"
     ],
     "atom": {
