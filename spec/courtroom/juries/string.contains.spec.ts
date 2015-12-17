@@ -90,4 +90,40 @@ describe("contains tests", function() {
 
     expect(issues).toEqual([]);
   });
+
+  it("should return issue with correct details if string doesn't contain the requirements with value 'req'", function() {
+    let c = new Courtroom();
+
+    c.trial("property").laws.contains("req");
+
+    var dummy = {
+      property: "you won't find r-e-q in here!"
+    };
+
+    var issues = c.judge(dummy);
+
+    expect(issues.length).toEqual(1);
+
+    expect(issues[0].property).toBe("property");
+    expect(issues[0].jury).toBe("string.contains");
+    expect(issues[0].details.required).toBe("req");
+  });
+
+  it("should return issue with correct details if string doesn't contain the requirements with value 'apple'", function() {
+    let c = new Courtroom();
+
+    c.trial("property").laws.contains("apple");
+
+    var dummy = {
+      property: "I only like oranges. Nothing else."
+    };
+
+    var issues = c.judge(dummy);
+
+    expect(issues.length).toEqual(1);
+
+    expect(issues[0].property).toBe("property");
+    expect(issues[0].jury).toBe("string.contains");
+    expect(issues[0].details.required).toBe("apple");
+  });
 });
