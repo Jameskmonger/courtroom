@@ -13,7 +13,7 @@ export class IsJury implements Jury.Jury {
 
   public getDetails(): any {
     return {
-      expected: this.compare
+      required: this.compare
     }
   }
 }
