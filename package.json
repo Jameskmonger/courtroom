@@ -4,7 +4,7 @@
   "description": "Validation made easy!",
   "main": "build/courtroom.js",
   "scripts": {
-	"test": "karma start"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "karma-coveralls": "^1.1.2",
     "karma-jasmine": "^0.3.6",
     "karma-requirejs": "^0.2.2",
-    "karma-spec-reporter": "0.0.23"
+    "karma-spec-reporter": "0.0.23",
+	"phantomjs": "^1.9.19"
   }
 }
