@@ -34,6 +34,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-requirejs": "^0.2.2",
     "karma-spec-reporter": "0.0.23",
-	"phantomjs": "^1.9.19"
+	"phantomjs": "^1.9.19",
+	"jasmine-core": "^2.4"
   }
 }
