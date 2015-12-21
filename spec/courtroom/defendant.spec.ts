@@ -215,3 +215,28 @@ describe("Chaining laws", function() {
     expect(issues).toEqual(expectedIssues);
   });
 });
+
+describe("Trialling children", function() {
+  it("returns the correct child count when none applied", function() {
+    var defendant = new Defendant("name");
+
+    expect(defendant.getChildCount()).toBe(0);
+  });
+
+  it("returns the correct child count when one applied", function() {
+    var defendant = new Defendant("name");
+
+    var child = defendant.trial("bob");
+
+    expect(defendant.getChildCount()).toBe(1);
+  });
+
+  it("returns the correct child count when two applied", function() {
+    var defendant = new Defendant("name");
+
+    var child_one = defendant.trial("bob");
+    var child_two = defendant.trial("brian");
+
+    expect(defendant.getChildCount()).toBe(2);
+  });
+});
