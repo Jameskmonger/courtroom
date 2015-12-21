@@ -148,7 +148,7 @@ describe("Chaining laws", function() {
         jury: "match.is",
         value: "notbruce",
         details: {
-          expected: "bruce"
+          required: "bruce"
         }
     };
 
@@ -206,7 +206,7 @@ describe("Chaining laws", function() {
         jury: "match.is",
         value: "simon",
         details: {
-          expected: "bruce"
+          required: "bruce"
         }
     };
 
