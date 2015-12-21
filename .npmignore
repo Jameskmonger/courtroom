@@ -1,0 +1,9 @@
+spec
+src
+typings
+karma.conf.js
+.travis.yml
+.gitignore
+.tsdrc
+test-main.ts
+tsd.json
