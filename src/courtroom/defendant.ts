@@ -2,13 +2,27 @@ import Lawbook = require("./lawbook");
 
 export class Defendant {
   public laws: Lawbook.Lawbook;
+  private children: Array<Defendant>;
 
   constructor(private name: string) {
     this.laws = new Lawbook.Lawbook();
+    this.children = [];
   }
 
   public getName(): string {
     return this.name;
+  }
+
+  public trial(name: string): Defendant {
+    var defendant = new Defendant(name);
+
+    this.children.push(defendant);
+
+    return defendant;
+  }
+
+  public getChildCount() {
+    return this.children.length;
   }
 
   public judge(value: any): Array<any> {
@@ -27,6 +41,10 @@ export class Defendant {
 
         issues.push(issue);
       }
+    }
+
+    for (var child of this.children) {
+      issues = issues.concat(child.judge(value[child.getName()]));
     }
 
     return issues;

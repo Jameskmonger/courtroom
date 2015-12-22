@@ -137,4 +137,25 @@ describe("Courtroom Judge", function() {
     var issues = courtroom.judge(dummy);
     expect(issues).toEqual([]);
   });
+
+  it("should return no issues when properties all comply including children", function() {
+    var courtroom = new Courtroom();
+
+    courtroom.trial("not_parent").laws.not(5);
+
+    var parent = courtroom.trial("is_parent");
+
+    parent.trial("jimmy").laws.minLength(4);
+    parent.trial("bob").laws.maxLength(6);
+
+    var obj = {
+      not_parent: 6,
+      is_parent: {
+        jimmy: "hello there my friend!",
+        bob: "hi"
+      }
+    }
+
+    expect(courtroom.judge(obj)).toEqual([]);
+  });
 });
