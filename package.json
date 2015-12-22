@@ -3,9 +3,7 @@
   "version": "0.5.0",
   "description": "Validation made easy!",
   "main": "build/courtroom.js",
-  "scripts": {
-    "test": "karma start"
-  },
+  "scripts": { },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jameskmonger/courtroom.git"
