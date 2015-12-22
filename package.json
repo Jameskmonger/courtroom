@@ -23,9 +23,8 @@
     "requirejs": "^2.1.22"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-karma": "^0.12.1",
-    "grunt-karma-coveralls": "^2.5.4",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.10.0",
     "jasmine": "^2.4.1",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.2",
