@@ -5,10 +5,9 @@ node_js:
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "npm install karma"
-  - "npm install phantomjs"
-  - "npm install karma-phantomjs-launcher"
+  - "npm install"
   - "npm install -g typescript"
   - "npm install -g tsd"
+  - "npm install -g gulp"
   - "tsd install"
-  - "tsc spec/courtroom/*.spec.ts spec/courtroom/**/*.spec.ts --module amd --moduleResolution classic --outDir test-build"
+  - "gulp test"
