@@ -10,5 +10,7 @@ before_install:
   - "npm install karma-phantomjs-launcher"
   - "npm install -g typescript"
   - "npm install -g tsd"
+  - "npm install -g gulp"
+  - "npm install gulp-typescript"
   - "tsd install"
-  - "tsc spec/courtroom/*.spec.ts spec/courtroom/**/*.spec.ts --module amd --moduleResolution classic --outDir test-build"
+  - "gulp test"
