@@ -13,7 +13,12 @@ gulp.task('build', () => {
 gulp.task('test', ['test-build:spec', 'test-build:src'], () => {
   new Server({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    singleRun: true,
+    plugins:[
+      'karma-spec-reporter',
+      'karma-coverage',
+      'karma-coveralls'
+    ]
   }).start();
 });
 gulp.task('test-build:spec', (done) => {
