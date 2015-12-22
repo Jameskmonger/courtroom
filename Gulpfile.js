@@ -14,7 +14,8 @@ gulp.task('test', ['test-build:spec', 'test-build:src'], () => {
   new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true,
-    plugins:[
+    plugins: [
+      'karma-jasmine',
       'karma-spec-reporter',
       'karma-coverage',
       'karma-coveralls'
