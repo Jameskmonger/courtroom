@@ -16,10 +16,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.ts',
-      {pattern: 'test-build/src/courtroom/*.js', included: false},
-      {pattern: 'test-build/src/courtroom/juries/*.js', included: false},
-      {pattern: 'test-build/spec/courtroom/*.spec.js', included: false},
-      {pattern: 'test-build/spec/courtroom/juries/*.spec.js', included: false}
+      {pattern: 'test-build/spec/**/*.spec.js', included: false},
+      {pattern: 'test-build/src/**/*.js', included: false}
     ],
 
 
@@ -31,8 +29,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test-build/src/courtroom/*.js': ['coverage'],
-      'test-build/src/courtroom/juries/*.js': ['coverage']
+      'test-build/src/**/*.js': ['coverage'],
     },
 
 
