@@ -16,6 +16,7 @@ gulp.task('test', ['test-build:spec', 'test-build:src'], () => {
     singleRun: true,
     plugins: [
       'karma-jasmine',
+      'karma-requirejs',
       'karma-spec-reporter',
       'karma-coverage',
       'karma-coveralls'
