@@ -19,7 +19,8 @@ gulp.task('test', ['test-build:spec', 'test-build:src'], () => {
       'karma-requirejs',
       'karma-spec-reporter',
       'karma-coverage',
-      'karma-coveralls'
+      'karma-coveralls',
+      'karma-phantomjs-launcher'
     ]
   }).start();
 });
