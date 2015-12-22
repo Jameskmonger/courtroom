@@ -239,4 +239,105 @@ describe("Trialling children", function() {
 
     expect(defendant.getChildCount()).toBe(2);
   });
+
+  it("returns correct issue when one child is wrong", function() {
+    var defendant = new Defendant("obj");
+
+    defendant.trial("number").laws.not(5);
+
+    var obj = {
+      number: 5
+    };
+
+    var expectedIssue = {
+      property: "number",
+      jury: "match.not",
+      value: 5,
+      details: {
+        prohibited: 5
+      }
+    };
+
+    expect(defendant.judge(obj)).toEqual([ expectedIssue ]);
+  });
+
+  it("returns correct issues when two children are wrong", function() {
+    var defendant = new Defendant("obj");
+
+    defendant.trial("number").laws.not(5);
+    defendant.trial("text").laws.contains("foo");
+
+    var obj = {
+      number: 5,
+      text: "i don't contain f-o-o"
+    };
+
+    var expectedIssueFirst = {
+      property: "number",
+      jury: "match.not",
+      value: 5,
+      details: {
+        prohibited: 5
+      }
+    };
+
+    var expectedIssueSecond = {
+      property: "text",
+      jury: "string.contains",
+      value: "i don't contain f-o-o",
+      details: {
+        required: "foo"
+      }
+    };
+
+    expect(defendant.judge(obj)).toEqual([ expectedIssueFirst, expectedIssueSecond ]);
+  });
+
+  it("returns correct issues when one child and two grand children are wrong", function() {
+    var defendant = new Defendant("obj");
+
+    defendant.trial("number").laws.not(5);
+
+    var text = defendant.trial("text");
+
+    text.trial("first").laws.not(2);
+    text.trial("second").laws.minLength(4);
+
+    var obj = {
+      number: 5,
+      text: {
+        first: 2,
+        second: "aa"
+      }
+    };
+
+    var expectedIssueFirst = {
+      property: "number",
+      jury: "match.not",
+      value: 5,
+      details: {
+        prohibited: 5
+      }
+    };
+
+    var expectedIssueSecond = {
+      property: "first",
+      jury: "match.not",
+      value: 2,
+      details: {
+        prohibited: 2
+      }
+    };
+
+    var expectedIssueThird = {
+      property: "second",
+      jury: "string.minLength",
+      value: "aa",
+      details: {
+        minimum: 4
+      }
+    };
+
+    expect(defendant.judge(obj)).toEqual([ expectedIssueFirst, expectedIssueSecond, expectedIssueThird ]);
+  });
 });
