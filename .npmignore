@@ -7,3 +7,5 @@ karma.conf.js
 .tsdrc
 test-main.ts
 tsd.json
+test-build
+coverage
