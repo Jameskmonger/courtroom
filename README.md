@@ -17,7 +17,9 @@ $ npm install courtroom
     `git clone https://github.com/Jameskmonger/courtroom.git`
 2. Install the NPM modules:
     `npm install`
-3. Compile the TypeScript - they will automatically be placed into the /build/ folder:
+3. Install the typings:
+    `tsd install`
+4. Compile the TypeScript - they will automatically be placed into the /build/ folder:
     `gulp`
-4. Run the tests:
+5. Run the tests:
     `gulp test`
