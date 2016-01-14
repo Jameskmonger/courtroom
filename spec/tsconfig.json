@@ -21,8 +21,8 @@
         "!node_modules/**"
     ],
     "files": [
-        "index.spec.ts",
         "defendant.spec.ts",
+        "index.spec.ts",
         "juries/isjury.spec.ts",
         "juries/notjury.spec.ts",
         "juries/string.contains.spec.ts",
