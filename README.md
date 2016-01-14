@@ -10,6 +10,29 @@ Validation-tastic :no_entry:
 $ npm install courtroom
 ```
 
+## Usage
+
+```javascript
+const Courtroom = require('courtroom');
+const c = new Courtroom();
+const issues;
+
+c.trial('password').laws.minLength(10);
+
+issues = c.judge({password: 'hunter2'});
+```
+
+`judge()` returns an array containing issues:
+
+```javascript
+[{
+  property: 'password',
+  jury: 'string.minLength',
+  value: 'hunter2',
+  details: { minimum: 10 } 
+}]
+```
+
 ## Contribute
 
 ### Setup :wrench:

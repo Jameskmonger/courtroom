@@ -1,6 +1,6 @@
 import Defendant = require("./defendant");
 
-export class Courtroom {
+export = class Courtroom {
   private defendants: Array<Defendant.Defendant>;
 
   constructor() {

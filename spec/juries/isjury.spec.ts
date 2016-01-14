@@ -1,6 +1,6 @@
-///<reference path="../../../typings/jasmine/jasmine.d.ts" />
+///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import IsJuryModule = require("../../../src/courtroom/juries/isjury");
+import IsJuryModule = require("../../src/juries/isjury");
 
 const IsJury = IsJuryModule.IsJury;
 
