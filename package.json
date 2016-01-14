@@ -1,8 +1,8 @@
 {
   "name": "courtroom",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Validation made easy!",
-  "main": "build/courtroom.js",
+  "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },

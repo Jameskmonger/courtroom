@@ -1,4 +1,4 @@
-import Defendant = require("./defendant");
+import Defendant = require("./courtroom/defendant");
 
 export = class Courtroom {
   private defendants: Array<Defendant.Defendant>;

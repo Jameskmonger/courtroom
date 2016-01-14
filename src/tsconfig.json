@@ -21,15 +21,15 @@
         "!node_modules/**"
     ],
     "files": [
-        "index.ts",
-        "defendant.ts",
-        "juries/isjury.ts",
-        "juries/jury.ts",
-        "juries/notjury.ts",
-        "juries/string.contains.jury.ts",
-        "juries/string.maxLength.jury.ts",
-        "juries/string.minLength.jury.ts",
-        "lawbook.ts"
+        "courtroom/defendant.ts",
+        "courtroom/juries/isjury.ts",
+        "courtroom/juries/jury.ts",
+        "courtroom/juries/notjury.ts",
+        "courtroom/juries/string.contains.jury.ts",
+        "courtroom/juries/string.maxLength.jury.ts",
+        "courtroom/juries/string.minLength.jury.ts",
+        "courtroom/lawbook.ts",
+        "index.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
