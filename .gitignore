@@ -1,10 +1,11 @@
 # npm modules
 node_modules
 
-build
-
 test-build
 
 coverage
 
 typings
+
+index.js
+courtroom
