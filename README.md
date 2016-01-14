@@ -15,7 +15,7 @@ $ npm install courtroom
 ```javascript
 const Courtroom = require('courtroom');
 const c = new Courtroom();
-const issues;
+let issues;
 
 c.trial('password').laws.minLength(10);
 
