@@ -21,13 +21,13 @@
         "!node_modules/**"
     ],
     "files": [
-        "courtroom/courtroom.spec.ts",
-        "courtroom/defendant.spec.ts",
-        "courtroom/juries/isjury.spec.ts",
-        "courtroom/juries/notjury.spec.ts",
-        "courtroom/juries/string.contains.spec.ts",
-        "courtroom/juries/string.maxLength.spec.ts",
-        "courtroom/juries/string.minLength.spec.ts"
+        "index.spec.ts",
+        "defendant.spec.ts",
+        "juries/isjury.spec.ts",
+        "juries/notjury.spec.ts",
+        "juries/string.contains.spec.ts",
+        "juries/string.maxLength.spec.ts",
+        "juries/string.minLength.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

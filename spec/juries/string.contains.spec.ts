@@ -1,9 +1,8 @@
-///<reference path="../../../typings/jasmine/jasmine.d.ts" />
+///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import CourtroomModule = require("../../../src/courtroom/courtroom");
-const Courtroom = CourtroomModule.Courtroom;
+import Courtroom = require("../../src/index");
 
-import StringJuryModule = require("../../../src/courtroom/juries/string.contains.jury");
+import StringJuryModule = require("../../src/juries/string.contains.jury");
 const ContainsJury = StringJuryModule.ContainsJury;
 
 describe("string.contains Constructor tests", function() {

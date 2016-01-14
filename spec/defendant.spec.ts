@@ -1,6 +1,6 @@
-///<reference path="../../typings/jasmine/jasmine.d.ts" />
+///<reference path="../typings/jasmine/jasmine.d.ts" />
 
-import DefendantModule = require("../../src/courtroom/defendant");
+import DefendantModule = require("../src/defendant");
 
 const Defendant = DefendantModule.Defendant;
 
