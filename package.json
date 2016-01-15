@@ -19,9 +19,6 @@
     "url": "https://github.com/Jameskmonger/courtroom/issues"
   },
   "homepage": "https://github.com/Jameskmonger/courtroom#readme",
-  "dependencies": {
-    "requirejs": "^2.1.22"
-  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.10.0",
@@ -35,6 +32,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-requirejs": "^0.2.2",
     "karma-spec-reporter": "0.0.23",
-    "phantomjs": "^1.9.19"
+    "phantomjs": "^1.9.19",
+    "requirejs": "^2.1.22"
   }
 }
