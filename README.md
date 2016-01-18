@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Jameskmonger/courtroom.svg?branch=master)](https://travis-ci.org/Jameskmonger/courtroom) [![Coverage Status](https://coveralls.io/repos/Jameskmonger/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/Jameskmonger/courtroom?branch=master)
 [![npm version](https://badge.fury.io/js/courtroom.svg)](https://badge.fury.io/js/courtroom)
-
-![Tonic](https://tonicdev.com/favicon.ico) Test me on Tonic
+[![Tonic](https://img.shields.io/badge/tonic-supported-blue.svg)](https://tonicdev.com/npm/courtroom)
 
 Validation-tastic :no_entry:
 
