@@ -35,6 +35,8 @@ issues = c.judge({password: 'hunter2'});
 }]
 ```
 
+You can [try this example on Tonic](https://tonicdev.com/npm/courtroom).
+
 ## Contribute
 
 ### Setup :wrench:
