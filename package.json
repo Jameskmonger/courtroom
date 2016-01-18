@@ -1,6 +1,6 @@
 {
   "name": "courtroom",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {
@@ -34,5 +34,6 @@
     "karma-spec-reporter": "0.0.23",
     "phantomjs": "^1.9.19",
     "requirejs": "^2.1.22"
-  }
+  },
+  "tonicExampleFilename": "example.js"
 }
