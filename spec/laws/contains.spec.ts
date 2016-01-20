@@ -2,7 +2,7 @@
 
 import Courtroom = require("../../src/index");
 
-import StringLawModule = require("../../src/courtroom/laws/string.contains.law");
+import StringLawModule = require("../../src/courtroom/laws/contains");
 const ContainsLaw = StringLawModule.ContainsLaw;
 
 describe("string.contains Constructor tests", function() {

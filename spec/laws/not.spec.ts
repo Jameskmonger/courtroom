@@ -1,6 +1,6 @@
 ///<reference path="../../typings/jasmine/jasmine.d.ts" />
 
-import NotLawModule = require("../../src/courtroom/laws/notlaw");
+import NotLawModule = require("../../src/courtroom/laws/not");
 
 const NotLaw = NotLawModule.NotLaw;
 

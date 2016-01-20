@@ -1,9 +1,9 @@
 import Law = require("./laws/law");
-import NotLaw = require("./laws/notlaw");
-import IsLaw = require("./laws/islaw");
-import StringContainsLaw = require("./laws/string.contains.law");
-import StringMaxLengthLaw = require("./laws/string.maxLength.law");
-import StringMinLengthLaw = require("./laws/string.minLength.law");
+import NotLaw = require("./laws/not");
+import IsLaw = require("./laws/is");
+import StringContainsLaw = require("./laws/contains");
+import StringMaxLengthLaw = require("./laws/maxLength");
+import StringMinLengthLaw = require("./laws/minLength");
 
 export class Lawbook {
   private laws: Array<Law.Law>;
