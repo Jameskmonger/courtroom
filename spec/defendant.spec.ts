@@ -126,7 +126,7 @@ describe("Chaining laws", function() {
 
     var expectedIssue = {
         property: "name",
-        law: "match.not",
+        law: "not",
         value: "james",
         details: {
           prohibited: "james"
@@ -145,7 +145,7 @@ describe("Chaining laws", function() {
 
     var expectedIssue = {
         property: "name",
-        law: "match.is",
+        law: "is",
         value: "notbruce",
         details: {
           required: "bruce"
@@ -164,7 +164,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueFirst = {
         property: "name",
-        law: "match.not",
+        law: "not",
         value: "simon",
         details: {
           prohibited: "simon"
@@ -173,7 +173,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueSecond = {
         property: "name",
-        law: "string.contains",
+        law: "contains",
         value: "simon",
         details: {
           required: "a"
@@ -194,7 +194,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueFirst = {
         property: "name",
-        law: "match.not",
+        law: "not",
         value: "simon",
         details: {
           prohibited: "simon"
@@ -203,7 +203,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueSecond = {
         property: "name",
-        law: "match.is",
+        law: "is",
         value: "simon",
         details: {
           required: "bruce"
@@ -251,7 +251,7 @@ describe("Trialling children", function() {
 
     var expectedIssue = {
       property: "number",
-      law: "match.not",
+      law: "not",
       value: 5,
       details: {
         prohibited: 5
@@ -274,7 +274,7 @@ describe("Trialling children", function() {
 
     var expectedIssueFirst = {
       property: "number",
-      law: "match.not",
+      law: "not",
       value: 5,
       details: {
         prohibited: 5
@@ -283,7 +283,7 @@ describe("Trialling children", function() {
 
     var expectedIssueSecond = {
       property: "text",
-      law: "string.contains",
+      law: "contains",
       value: "i don't contain f-o-o",
       details: {
         required: "foo"
@@ -313,7 +313,7 @@ describe("Trialling children", function() {
 
     var expectedIssueFirst = {
       property: "number",
-      law: "match.not",
+      law: "not",
       value: 5,
       details: {
         prohibited: 5
@@ -322,7 +322,7 @@ describe("Trialling children", function() {
 
     var expectedIssueSecond = {
       property: "first",
-      law: "match.not",
+      law: "not",
       value: 2,
       details: {
         prohibited: 2
@@ -331,7 +331,7 @@ describe("Trialling children", function() {
 
     var expectedIssueThird = {
       property: "second",
-      law: "string.minLength",
+      law: "minLength",
       value: "aa",
       details: {
         minimum: 4

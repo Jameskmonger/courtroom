@@ -8,7 +8,7 @@ export class MaxLengthLaw implements Law.Law {
   }
 
   public getName(): string {
-    return "string.maxLength";
+    return "maxLength";
   }
 
   public getDetails(): any {

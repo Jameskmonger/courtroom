@@ -8,7 +8,7 @@ export class MinLengthLaw implements Law.Law {
   }
 
   public getName(): string {
-    return "string.minLength";
+    return "minLength";
   }
 
   public getDetails(): any {
