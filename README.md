@@ -39,6 +39,28 @@ issues = c.judge({password: 'hunter2'});
 
 You can [try this example on Tonic](https://tonicdev.com/npm/courtroom).
 
+## Laws
+
+### `is(string)`
+
+Property must exactly match given string
+
+### `not(string)`
+
+Property may take any value other than given string
+
+### `contains(string)`
+
+Property must contain the given string
+
+### `maxLength(number)`
+
+Property length must be less than given number
+
+### `minLength(number)`
+
+Property length must be greater than given number
+
 ## Contribute
 
 ### Setup :wrench:

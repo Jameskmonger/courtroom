@@ -24,7 +24,7 @@ describe("Defendant Constructor", function() {
   it("has no laws", function() {
     var d = new Defendant("prop");
 
-    expect(d.laws.getJuryCount()).toBe(0);
+    expect(d.laws.getLawCount()).toBe(0);
   });
 });
 
@@ -34,7 +34,7 @@ describe("Applying laws", function() {
 
     d.laws.not(null);
 
-    expect(d.laws.getJuryCount()).toBe(1);
+    expect(d.laws.getLawCount()).toBe(1);
   });
 
   it("has laws count 2 when match.not applied twice", function() {
@@ -43,7 +43,7 @@ describe("Applying laws", function() {
     d.laws.not(null);
     d.laws.not(null);
 
-    expect(d.laws.getJuryCount()).toBe(2);
+    expect(d.laws.getLawCount()).toBe(2);
   });
 
   it("has laws count 1 when match.is applied once", function() {
@@ -51,7 +51,7 @@ describe("Applying laws", function() {
 
     d.laws.is(null);
 
-    expect(d.laws.getJuryCount()).toBe(1);
+    expect(d.laws.getLawCount()).toBe(1);
   });
 
   it("has laws count 2 when match.is applied twice", function() {
@@ -60,7 +60,7 @@ describe("Applying laws", function() {
     d.laws.is(null);
     d.laws.is(null);
 
-    expect(d.laws.getJuryCount()).toBe(2);
+    expect(d.laws.getLawCount()).toBe(2);
   });
 });
 
@@ -70,7 +70,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").not("luke").not("matt");
 
-    expect(d.laws.getJuryCount()).toBe(3);
+    expect(d.laws.getLawCount()).toBe(3);
   });
 
   it("has the correct jury count with 3 different chained", function() {
@@ -78,7 +78,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").contains(" ").maxLength(12);
 
-    expect(d.laws.getJuryCount()).toBe(3);
+    expect(d.laws.getLawCount()).toBe(3);
   });
 
   it("has the correct jury count with 6 same chained", function() {
@@ -86,7 +86,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").not("luke").not("matt").not("james").not("paulo").not("samantha");
 
-    expect(d.laws.getJuryCount()).toBe(6);
+    expect(d.laws.getLawCount()).toBe(6);
   });
 
   it("has the correct jury count with 6 different chained", function() {
@@ -94,7 +94,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").contains(" ").maxLength(12).is("bla").minLength(10).not("rudeword");
 
-    expect(d.laws.getJuryCount()).toBe(6);
+    expect(d.laws.getLawCount()).toBe(6);
   });
 
   it("returns no issues when matches all same chained laws", function() {
@@ -126,7 +126,7 @@ describe("Chaining laws", function() {
 
     var expectedIssue = {
         property: "name",
-        jury: "match.not",
+        law: "match.not",
         value: "james",
         details: {
           prohibited: "james"
@@ -145,7 +145,7 @@ describe("Chaining laws", function() {
 
     var expectedIssue = {
         property: "name",
-        jury: "match.is",
+        law: "match.is",
         value: "notbruce",
         details: {
           required: "bruce"
@@ -164,7 +164,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueFirst = {
         property: "name",
-        jury: "match.not",
+        law: "match.not",
         value: "simon",
         details: {
           prohibited: "simon"
@@ -173,7 +173,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueSecond = {
         property: "name",
-        jury: "string.contains",
+        law: "string.contains",
         value: "simon",
         details: {
           required: "a"
@@ -194,7 +194,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueFirst = {
         property: "name",
-        jury: "match.not",
+        law: "match.not",
         value: "simon",
         details: {
           prohibited: "simon"
@@ -203,7 +203,7 @@ describe("Chaining laws", function() {
 
     var expectedIssueSecond = {
         property: "name",
-        jury: "match.is",
+        law: "match.is",
         value: "simon",
         details: {
           required: "bruce"
@@ -251,7 +251,7 @@ describe("Trialling children", function() {
 
     var expectedIssue = {
       property: "number",
-      jury: "match.not",
+      law: "match.not",
       value: 5,
       details: {
         prohibited: 5
@@ -274,7 +274,7 @@ describe("Trialling children", function() {
 
     var expectedIssueFirst = {
       property: "number",
-      jury: "match.not",
+      law: "match.not",
       value: 5,
       details: {
         prohibited: 5
@@ -283,7 +283,7 @@ describe("Trialling children", function() {
 
     var expectedIssueSecond = {
       property: "text",
-      jury: "string.contains",
+      law: "string.contains",
       value: "i don't contain f-o-o",
       details: {
         required: "foo"
@@ -313,7 +313,7 @@ describe("Trialling children", function() {
 
     var expectedIssueFirst = {
       property: "number",
-      jury: "match.not",
+      law: "match.not",
       value: 5,
       details: {
         prohibited: 5
@@ -322,7 +322,7 @@ describe("Trialling children", function() {
 
     var expectedIssueSecond = {
       property: "first",
-      jury: "match.not",
+      law: "match.not",
       value: 2,
       details: {
         prohibited: 2
@@ -331,7 +331,7 @@ describe("Trialling children", function() {
 
     var expectedIssueThird = {
       property: "second",
-      jury: "string.minLength",
+      law: "string.minLength",
       value: "aa",
       details: {
         minimum: 4

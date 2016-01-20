@@ -45,7 +45,7 @@ describe("minLength tests", function() {
     expect(issues.length).toBe(1);
 
     expect(issues[0].property).toBe("prop");
-    expect(issues[0].jury).toBe("string.minLength");
+    expect(issues[0].law).toBe("string.minLength");
     expect(issues[0].details.minimum).toBe(3);
   });
 
@@ -63,7 +63,7 @@ describe("minLength tests", function() {
     expect(issues.length).toBe(1);
 
     expect(issues[0].property).toBe("myprop");
-    expect(issues[0].jury).toBe("string.minLength");
+    expect(issues[0].law).toBe("string.minLength");
     expect(issues[0].details.minimum).toBe(10);
   });
 });

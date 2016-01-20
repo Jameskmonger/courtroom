@@ -1,6 +1,6 @@
-import Jury = require("./jury");
+import Law = require("./law");
 
-export class MinLengthJury implements Jury.Jury {
+export class MinLengthLaw implements Law.Law {
   constructor(private min: number) { }
 
   verdict(defendant: any): boolean {

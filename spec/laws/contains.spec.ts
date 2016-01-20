@@ -2,18 +2,18 @@
 
 import Courtroom = require("../../src/index");
 
-import StringJuryModule = require("../../src/courtroom/juries/string.contains.jury");
-const ContainsJury = StringJuryModule.ContainsJury;
+import StringLawModule = require("../../src/courtroom/laws/contains");
+const ContainsLaw = StringLawModule.ContainsLaw;
 
 describe("string.contains Constructor tests", function() {
   it("should have correct name", function() {
-    var j = new ContainsJury("req");
+    var j = new ContainsLaw("req");
 
     expect(j.getName()).toBe("string.contains");
   });
 
   it("should have correct details", function() {
-    var j = new ContainsJury("req");
+    var j = new ContainsLaw("req");
 
     expect(j.getDetails()).toEqual({ required: "req" });
   });
@@ -21,13 +21,13 @@ describe("string.contains Constructor tests", function() {
 
 describe("string.contains Verdict tests", function() {
   it("should give false verdict if incorrect", function() {
-    var j = new ContainsJury("req");
+    var j = new ContainsLaw("req");
 
     expect(j.verdict("bla")).toBe(false);
   });
 
   it("should have true verdict if correct", function() {
-    var j = new ContainsJury("req");
+    var j = new ContainsLaw("req");
 
     expect(j.verdict("abcreqjkl")).toEqual(true);
   });
@@ -104,7 +104,7 @@ describe("contains tests", function() {
     expect(issues.length).toEqual(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].jury).toBe("string.contains");
+    expect(issues[0].law).toBe("string.contains");
     expect(issues[0].details.required).toBe("req");
   });
 
@@ -122,7 +122,7 @@ describe("contains tests", function() {
     expect(issues.length).toEqual(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].jury).toBe("string.contains");
+    expect(issues[0].law).toBe("string.contains");
     expect(issues[0].details.required).toBe("apple");
   });
 });

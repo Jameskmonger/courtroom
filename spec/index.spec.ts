@@ -55,7 +55,7 @@ describe("Place property on trial", function() {
 
     defendant.laws.not("nottest");
 
-    expect(defendant.laws.getJuryCount()).toBe(1);
+    expect(defendant.laws.getLawCount()).toBe(1);
   });
 });
 
@@ -95,7 +95,7 @@ describe("Courtroom Judge", function() {
 
     var issue = issues[0];
     expect(issue.property).toBe("prop_name");
-    expect(issue.jury).toBe("match.is");
+    expect(issue.law).toBe("match.is");
     expect(issue.value).toBe(actualValue);
     expect(issue.details).toEqual({ required: requiredValue });
   });
@@ -119,7 +119,7 @@ describe("Courtroom Judge", function() {
 
     var issue = issues[0];
     expect(issue.property).toBe("prop_name");
-    expect(issue.jury).toBe("match.not");
+    expect(issue.law).toBe("match.not");
     expect(issue.value).toBe(actualValue);
     expect(issue.details).toEqual({ prohibited: prohibitedValue });
   });

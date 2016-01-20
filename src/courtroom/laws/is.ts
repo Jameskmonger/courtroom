@@ -1,6 +1,6 @@
-import Jury = require("./jury");
+import Law = require("./law");
 
-export class IsJury implements Jury.Jury {
+export class IsLaw implements Law.Law {
   constructor(private compare: any) { }
 
   verdict(defendant: any): boolean {

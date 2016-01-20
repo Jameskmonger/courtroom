@@ -1,6 +1,6 @@
-import Jury = require("./jury");
+import Law = require("./law");
 
-export class MaxLengthJury implements Jury.Jury {
+export class MaxLengthLaw implements Law.Law {
   constructor(private max: number) { }
 
   verdict(defendant: any): boolean {
