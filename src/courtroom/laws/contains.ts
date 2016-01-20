@@ -8,7 +8,7 @@ export class ContainsLaw implements Law.Law {
   }
 
   public getName(): string {
-    return "string.contains";
+    return "contains";
   }
 
   public getDetails(): any {

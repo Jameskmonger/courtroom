@@ -8,7 +8,7 @@ export class IsLaw implements Law.Law {
   }
 
   public getName(): string {
-    return "match.is";
+    return "is";
   }
 
   public getDetails(): any {

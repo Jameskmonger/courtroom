@@ -22,13 +22,13 @@
     ],
     "files": [
         "courtroom/defendant.ts",
+        "courtroom/lawbook.ts",
+        "courtroom/laws/contains.ts",
         "courtroom/laws/is.ts",
         "courtroom/laws/law.ts",
-        "courtroom/laws/not.ts",
-        "courtroom/laws/contains.ts",
         "courtroom/laws/maxLength.ts",
         "courtroom/laws/minLength.ts",
-        "courtroom/lawbook.ts",
+        "courtroom/laws/not.ts",
         "index.ts"
     ],
     "atom": {
