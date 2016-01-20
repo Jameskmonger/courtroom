@@ -31,7 +31,7 @@ issues = c.judge({password: 'hunter2'});
 ```javascript
 [{
   property: 'password',
-  jury: 'string.minLength',
+  jury: 'minLength',
   value: 'hunter2',
   details: { minimum: 10 }
 }]
