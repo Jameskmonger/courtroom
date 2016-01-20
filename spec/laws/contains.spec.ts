@@ -9,7 +9,7 @@ describe("string.contains Constructor tests", function() {
   it("should have correct name", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.getName()).toBe("string.contains");
+    expect(j.getName()).toBe("contains");
   });
 
   it("should have correct details", function() {
@@ -104,7 +104,7 @@ describe("contains tests", function() {
     expect(issues.length).toEqual(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].law).toBe("string.contains");
+    expect(issues[0].law).toBe("contains");
     expect(issues[0].details.required).toBe("req");
   });
 
@@ -122,7 +122,7 @@ describe("contains tests", function() {
     expect(issues.length).toEqual(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].law).toBe("string.contains");
+    expect(issues[0].law).toBe("contains");
     expect(issues[0].details.required).toBe("apple");
   });
 });

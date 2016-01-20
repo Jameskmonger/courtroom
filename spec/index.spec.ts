@@ -95,7 +95,7 @@ describe("Courtroom Judge", function() {
 
     var issue = issues[0];
     expect(issue.property).toBe("prop_name");
-    expect(issue.law).toBe("match.is");
+    expect(issue.law).toBe("is");
     expect(issue.value).toBe(actualValue);
     expect(issue.details).toEqual({ required: requiredValue });
   });
@@ -119,7 +119,7 @@ describe("Courtroom Judge", function() {
 
     var issue = issues[0];
     expect(issue.property).toBe("prop_name");
-    expect(issue.law).toBe("match.not");
+    expect(issue.law).toBe("not");
     expect(issue.value).toBe(actualValue);
     expect(issue.details).toEqual({ prohibited: prohibitedValue });
   });

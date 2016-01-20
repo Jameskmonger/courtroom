@@ -1,6 +1,6 @@
 {
   "name": "courtroom",
-  "version": "0.7.4",
+  "version": "0.7.6",
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {

@@ -8,7 +8,7 @@ export class NotLaw implements Law.Law {
   }
 
   public getName(): string {
-    return "match.not";
+    return "not";
   }
 
   public getDetails(): any {
