@@ -28,15 +28,15 @@ export class Defendant {
   public judge(value: any): Array<any> {
     var issues: Array<any> = [];
 
-    for (var jury of this.laws.getJuries()) {
-      var complies = jury.verdict(value);
+    for (var law of this.laws.getLaws()) {
+      var complies = law.verdict(value);
 
       if (!complies) {
         var issue = {
           property: this.getName(),
-          jury: jury.getName(),
+          law: law.getName(),
           value: value,
-          details: jury.getDetails()
+          details: law.getDetails()
         };
 
         issues.push(issue);

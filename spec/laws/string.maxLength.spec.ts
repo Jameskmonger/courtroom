@@ -59,7 +59,7 @@ describe("maxLength tests", function() {
     expect(issues.length).toBe(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].jury).toBe("string.maxLength");
+    expect(issues[0].law).toBe("string.maxLength");
     expect(issues[0].details.maximum).toBe(1);
   });
 
@@ -77,7 +77,7 @@ describe("maxLength tests", function() {
     expect(issues.length).toBe(1);
 
     expect(issues[0].property).toBe("property");
-    expect(issues[0].jury).toBe("string.maxLength");
+    expect(issues[0].law).toBe("string.maxLength");
     expect(issues[0].details.maximum).toBe(5);
   });
 });

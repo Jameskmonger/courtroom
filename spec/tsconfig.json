@@ -23,11 +23,11 @@
     "files": [
         "defendant.spec.ts",
         "index.spec.ts",
-        "juries/isjury.spec.ts",
-        "juries/notjury.spec.ts",
-        "juries/string.contains.spec.ts",
-        "juries/string.maxLength.spec.ts",
-        "juries/string.minLength.spec.ts"
+        "laws/islaw.spec.ts",
+        "laws/notlaw.spec.ts",
+        "laws/string.contains.spec.ts",
+        "laws/string.maxLength.spec.ts",
+        "laws/string.minLength.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

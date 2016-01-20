@@ -22,12 +22,12 @@
     ],
     "files": [
         "courtroom/defendant.ts",
-        "courtroom/juries/isjury.ts",
-        "courtroom/juries/jury.ts",
-        "courtroom/juries/notjury.ts",
-        "courtroom/juries/string.contains.jury.ts",
-        "courtroom/juries/string.maxLength.jury.ts",
-        "courtroom/juries/string.minLength.jury.ts",
+        "courtroom/laws/islaw.ts",
+        "courtroom/laws/law.ts",
+        "courtroom/laws/notlaw.ts",
+        "courtroom/laws/string.contains.law.ts",
+        "courtroom/laws/string.maxLength.law.ts",
+        "courtroom/laws/string.minLength.law.ts",
         "courtroom/lawbook.ts",
         "index.ts"
     ],

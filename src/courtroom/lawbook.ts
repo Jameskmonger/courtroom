@@ -1,52 +1,52 @@
-import Jury = require("./juries/jury");
-import NotJury = require("./juries/notjury");
-import IsJury = require("./juries/isjury");
-import StringContainsJury = require("./juries/string.contains.jury");
-import StringMaxLengthJury = require("./juries/string.maxLength.jury");
-import StringMinLengthJury = require("./juries/string.minLength.jury");
+import Law = require("./laws/law");
+import NotLaw = require("./laws/notlaw");
+import IsLaw = require("./laws/islaw");
+import StringContainsLaw = require("./laws/string.contains.law");
+import StringMaxLengthLaw = require("./laws/string.maxLength.law");
+import StringMinLengthLaw = require("./laws/string.minLength.law");
 
 export class Lawbook {
-  private juries: Array<Jury.Jury>;
+  private laws: Array<Law.Law>;
 
   constructor() {
-    this.juries = [];
+    this.laws = [];
   }
 
   public not(compare: any): Lawbook {
-    this.juries.push(new NotJury.NotJury(compare));
+    this.laws.push(new NotLaw.NotLaw(compare));
 
     return this;
   }
 
   public is(compare: any): Lawbook {
-    this.juries.push(new IsJury.IsJury(compare));
+    this.laws.push(new IsLaw.IsLaw(compare));
 
     return this;
   }
 
   public contains(requirement: string): Lawbook {
-    this.juries.push(new StringContainsJury.ContainsJury(requirement));
+    this.laws.push(new StringContainsLaw.ContainsLaw(requirement));
 
     return this;
   }
 
   public minLength(min: number): Lawbook {
-    this.juries.push(new StringMinLengthJury.MinLengthJury(min));
+    this.laws.push(new StringMinLengthLaw.MinLengthLaw(min));
 
     return this;
   }
 
   public maxLength(max: number): Lawbook {
-    this.juries.push(new StringMaxLengthJury.MaxLengthJury(max));
+    this.laws.push(new StringMaxLengthLaw.MaxLengthLaw(max));
 
     return this;
   }
 
-  public getJuryCount(): number {
-    return (this.juries.length);
+  public getLawCount(): number {
+    return (this.laws.length);
   }
 
-  public getJuries(): Array<Jury.Jury> {
-    return this.juries;
+  public getLaws(): Array<Law.Law> {
+    return this.laws;
   }
 }
