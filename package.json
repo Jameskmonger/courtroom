@@ -3,6 +3,9 @@
   "version": "0.7.8",
   "description": "Validation made easy!",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.2.3"
+  },
   "scripts": {
     "test": "gulp test"
   },
