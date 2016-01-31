@@ -17,7 +17,7 @@ describe("string.contains Constructor tests", function() {
   it("should have correct details", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.getDetails()).to.equal({ required: "req" });
+    expect(j.getDetails()).to.be({ required: "req" });
   });
 });
 
@@ -47,7 +47,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string equals the requirements with value 'another_req'", function() {
@@ -61,7 +61,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string contains the requirements with value 'req'", function() {
@@ -75,7 +75,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string contains the requirements with value 'another_req'", function() {
@@ -89,7 +89,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return issue with correct details if string doesn't contain the requirements with value 'req'", function() {
