@@ -17,7 +17,7 @@ describe("string.contains Constructor tests", function() {
   it("should have correct details", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.getDetails()).to.be({ required: "req" });
+    expect(j.getDetails()).to.eql({ required: "req" });
   });
 });
 
