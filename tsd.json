@@ -7,9 +7,6 @@
   "installed": {
     "jasmine/jasmine.d.ts": {
       "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
-    },
-    "assert/assert.d.ts": {
-      "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
     }
   }
 }
