@@ -1,12 +1,13 @@
-///<reference path="../typings/jasmine/jasmine.d.ts" />
+///<reference path="../typings/expect.js/expect.js.d.ts" />
 
+import expect = require('expect.js');
 import Courtroom = require("../src/index");
 
 describe("Courtroom Constructor", function() {
   it("does not have any defendants", function() {
     var courtroom = new Courtroom();
 
-    expect(courtroom.getDefendantCount()).toBe(0);
+    expect(courtroom.getDefendantCount()).to.be(0);
   });
 });
 
@@ -16,7 +17,7 @@ describe("Place property on trial", function() {
 
     courtroom.trial("prop");
 
-    expect(courtroom.getDefendantCount()).toBe(1);
+    expect(courtroom.getDefendantCount()).to.be(1);
   });
 
   it("should have two defendants when two trialled", function() {
@@ -25,7 +26,7 @@ describe("Place property on trial", function() {
     courtroom.trial("prop");
     courtroom.trial("anotherprop");
 
-    expect(courtroom.getDefendantCount()).toBe(2);
+    expect(courtroom.getDefendantCount()).to.be(2);
   });
 
   it("should return defendant with correct name for 'prop'", function() {
@@ -35,7 +36,7 @@ describe("Place property on trial", function() {
 
     var prop = courtroom.trial(expectedName);
 
-    expect(prop.getName()).toBe(expectedName);
+    expect(prop.getName()).to.be(expectedName);
   });
 
   it("should return defendant with correct name for 'anotherprop'", function() {
@@ -45,7 +46,7 @@ describe("Place property on trial", function() {
 
     var prop = courtroom.trial(expectedName);
 
-    expect(prop.getName()).toBe(expectedName);
+    expect(prop.getName()).to.be(expectedName);
   });
 
   it("should return a defendant that we can apply laws to", function() {
@@ -55,7 +56,7 @@ describe("Place property on trial", function() {
 
     defendant.laws.not("nottest");
 
-    expect(defendant.laws.getLawCount()).toBe(1);
+    expect(defendant.laws.getLawCount()).to.be(1);
   });
 });
 
@@ -73,7 +74,7 @@ describe("Courtroom Judge", function() {
 
     var issues = courtroom.judge(dummy);
 
-    expect(issues.length).toBe(0);
+    expect(issues.length).to.be(0);
   });
 
   it("should return an array with one issue with correct details when one match.is law broken", function() {
@@ -91,13 +92,13 @@ describe("Courtroom Judge", function() {
     };
 
     var issues = courtroom.judge(dummy);
-    expect(issues.length).toBe(1);
+    expect(issues.length).to.be(1);
 
     var issue = issues[0];
-    expect(issue.property).toBe("prop_name");
-    expect(issue.law).toBe("is");
-    expect(issue.value).toBe(actualValue);
-    expect(issue.details).toEqual({ required: requiredValue });
+    expect(issue.property).to.be("prop_name");
+    expect(issue.law).to.be("is");
+    expect(issue.value).to.be(actualValue);
+    expect(issue.details).to.equal({ required: requiredValue });
   });
 
   it("should return an array with one issue with correct details when one match.not law broken", function() {
@@ -115,13 +116,13 @@ describe("Courtroom Judge", function() {
     };
 
     var issues = courtroom.judge(dummy);
-    expect(issues.length).toBe(1);
+    expect(issues.length).to.be(1);
 
     var issue = issues[0];
-    expect(issue.property).toBe("prop_name");
-    expect(issue.law).toBe("not");
-    expect(issue.value).toBe(actualValue);
-    expect(issue.details).toEqual({ prohibited: prohibitedValue });
+    expect(issue.property).to.be("prop_name");
+    expect(issue.law).to.be("not");
+    expect(issue.value).to.be(actualValue);
+    expect(issue.details).to.equal({ prohibited: prohibitedValue });
   });
 
   it("should report no issues with a courtroom with no trials", function() {
@@ -133,7 +134,7 @@ describe("Courtroom Judge", function() {
     };
 
     var issues = courtroom.judge(dummy);
-    expect(issues).toEqual([]);
+    expect(issues).to.equal([]);
   });
 
   it("should return no issues when properties all comply including children", function() {
@@ -154,6 +155,6 @@ describe("Courtroom Judge", function() {
       }
     }
 
-    expect(courtroom.judge(obj)).toEqual([]);
+    expect(courtroom.judge(obj)).to.equal([]);
   });
 });
