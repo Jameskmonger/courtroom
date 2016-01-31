@@ -106,7 +106,7 @@ describe("Chaining laws", function() {
 
     var issues = d.judge("bruce");
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("returns no issues when matches all different chained laws", function() {
@@ -116,7 +116,7 @@ describe("Chaining laws", function() {
 
     var issues = d.judge("bruce");
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("returns one correct issue when breaks one of same chained laws", function() {
