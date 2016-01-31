@@ -16,7 +16,7 @@ describe("minLength tests", function() {
 
     let issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if minimum length is 0 and property is 'james'", function() {
@@ -30,7 +30,7 @@ describe("minLength tests", function() {
 
     let issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return an issue with correct details if minimum length is 3 and property 'ab'", function() {
