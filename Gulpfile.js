@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const tsc = require('gulp-typescript');
 const Server = require('karma').Server;
 const tsProject = tsc.createProject('src/tsconfig.json');
+const mocha = require('gulp-mocha');
 
 gulp.task('default', ['build']);
 gulp.task('build', () => {
@@ -76,7 +77,7 @@ gulp.task('test-build:src:umd', (done) => {
   const tsProjectUMD = tsc.createProject('src/tsconfig.json', {
     module: 'umd'
   });
-	
+
   tsProjectUMD.src()
     .pipe(tsc(tsProjectUMD))
     .pipe(gulp.dest('test-build/src'))
