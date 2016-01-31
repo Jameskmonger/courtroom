@@ -135,7 +135,7 @@ describe("Chaining laws", function() {
         }
     };
 
-    expect(issues[0]).to.equal(expectedIssue);
+    expect(issues[0]).to.eql(expectedIssue);
   });
 
   it("returns one correct issue when breaks one of different chained laws", function() {
@@ -154,7 +154,7 @@ describe("Chaining laws", function() {
         }
     };
 
-    expect(issues[0]).to.equal(expectedIssue);
+    expect(issues[0]).to.eql(expectedIssue);
   });
 
   it("returns two correct issues when breaks two of same chained laws", function() {
@@ -184,7 +184,7 @@ describe("Chaining laws", function() {
 
     var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
 
-    expect(issues).to.equal(expectedIssues);
+    expect(issues).to.eql(expectedIssues);
   });
 
   it("returns two correct issues when breaks two of different chained laws", function() {
@@ -214,7 +214,7 @@ describe("Chaining laws", function() {
 
     var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
 
-    expect(issues).to.equal(expectedIssues);
+    expect(issues).to.eql(expectedIssues);
   });
 });
 
@@ -260,7 +260,7 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).to.equal([ expectedIssue ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssue ]);
   });
 
   it("returns correct issues when two children are wrong", function() {
@@ -292,7 +292,7 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).to.equal([ expectedIssueFirst, expectedIssueSecond ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssueFirst, expectedIssueSecond ]);
   });
 
   it("returns correct issues when one child and two grand children are wrong", function() {
@@ -340,6 +340,6 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).to.equal([ expectedIssueFirst, expectedIssueSecond, expectedIssueThird ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssueFirst, expectedIssueSecond, expectedIssueThird ]);
   });
 });
