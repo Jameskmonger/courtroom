@@ -99,7 +99,7 @@ describe("Courtroom Judge", function() {
     expect(issue.property).to.be("prop_name");
     expect(issue.law).to.be("is");
     expect(issue.value).to.be(actualValue);
-    expect(issue.details).to.equal({ required: requiredValue });
+    expect(issue.details).to.eql({ required: requiredValue });
   });
 
   it("should return an array with one issue with correct details when one match.not law broken", function() {
@@ -123,7 +123,7 @@ describe("Courtroom Judge", function() {
     expect(issue.property).to.be("prop_name");
     expect(issue.law).to.be("not");
     expect(issue.value).to.be(actualValue);
-    expect(issue.details).to.equal({ prohibited: prohibitedValue });
+    expect(issue.details).to.eql({ prohibited: prohibitedValue });
   });
 
   it("should report no issues with a courtroom with no trials", function() {
