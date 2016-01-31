@@ -10,6 +10,9 @@
     },
     "expect.js/expect.js.d.ts": {
       "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
     }
   }
 }
