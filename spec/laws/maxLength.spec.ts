@@ -16,7 +16,7 @@ describe("maxLength tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string's length is less than req when req is 2", function() {
@@ -30,7 +30,7 @@ describe("maxLength tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string's length is less than req when req is 10", function() {
@@ -44,7 +44,7 @@ describe("maxLength tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty()
   });
 
   it("should return an issue with correct details if string's length is more than req when req is 1", function() {
