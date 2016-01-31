@@ -19,6 +19,6 @@ gulp.task('test', () => {
     .pipe(tsc(srcProject))
     .pipe(gulp.dest('test-build/src'));
 
-  return gulp.src('test-build/spec/**/*.spec.js', {read: false})
+  return gulp.src('test-build/spec/**/*.spec.js')
       .pipe(mocha());
 });
