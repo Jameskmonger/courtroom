@@ -135,7 +135,7 @@ describe("Courtroom Judge", function() {
     };
 
     var issues = courtroom.judge(dummy);
-    expect(issues).to.equal([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues when properties all comply including children", function() {
@@ -156,6 +156,6 @@ describe("Courtroom Judge", function() {
       }
     }
 
-    expect(courtroom.judge(obj)).to.equal([]);
+    expect(courtroom.judge(obj)).to.be.empty();
   });
 });
