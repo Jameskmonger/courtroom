@@ -2,6 +2,7 @@ import Law = require("./laws/law");
 import NotLaw = require("./laws/not");
 import IsLaw = require("./laws/is");
 import StringContainsLaw = require("./laws/contains");
+import RegExpMatchesLaw = require("./laws/matches");
 import StringMaxLengthLaw = require("./laws/maxLength");
 import StringMinLengthLaw = require("./laws/minLength");
 
@@ -20,6 +21,12 @@ export class Lawbook {
 
   public is(compare: any): Lawbook {
     this.laws.push(new IsLaw.IsLaw(compare));
+
+    return this;
+  }
+
+  public matches(requirement: RegExp): Lawbook {
+    this.laws.push(new RegExpMatchesLaw.MatchesLaw(requirement));
 
     return this;
   }

@@ -25,6 +25,7 @@
         "index.spec.ts",
         "laws/contains.spec.ts",
         "laws/is.spec.ts",
+        "laws/matches.spec.ts",
         "laws/maxLength.spec.ts",
         "laws/minLength.spec.ts",
         "laws/not.spec.ts"
