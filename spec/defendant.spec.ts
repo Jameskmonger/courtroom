@@ -1,5 +1,7 @@
-///<reference path="../typings/jasmine/jasmine.d.ts" />
+///<reference path="../typings/expect.js/expect.js.d.ts" />
+///<reference path="../typings/mocha/mocha.d.ts" />
 
+import expect = require('expect.js');
 import DefendantModule = require("../src/courtroom/defendant");
 
 const Defendant = DefendantModule.Defendant;
@@ -10,7 +12,7 @@ describe("Defendant Constructor", function() {
 
     var d = new Defendant(expectedName);
 
-    expect(d.getName()).toBe(expectedName);
+    expect(d.getName()).to.be(expectedName);
   });
 
   it("stores the name correctly for 'value'", function() {
@@ -18,13 +20,13 @@ describe("Defendant Constructor", function() {
 
     var d = new Defendant(expectedName);
 
-    expect(d.getName()).toBe(expectedName);
+    expect(d.getName()).to.be(expectedName);
   });
 
   it("has no laws", function() {
     var d = new Defendant("prop");
 
-    expect(d.laws.getLawCount()).toBe(0);
+    expect(d.laws.getLawCount()).to.be(0);
   });
 });
 
@@ -34,7 +36,7 @@ describe("Applying laws", function() {
 
     d.laws.not(null);
 
-    expect(d.laws.getLawCount()).toBe(1);
+    expect(d.laws.getLawCount()).to.be(1);
   });
 
   it("has laws count 2 when match.not applied twice", function() {
@@ -43,7 +45,7 @@ describe("Applying laws", function() {
     d.laws.not(null);
     d.laws.not(null);
 
-    expect(d.laws.getLawCount()).toBe(2);
+    expect(d.laws.getLawCount()).to.be(2);
   });
 
   it("has laws count 1 when match.is applied once", function() {
@@ -51,7 +53,7 @@ describe("Applying laws", function() {
 
     d.laws.is(null);
 
-    expect(d.laws.getLawCount()).toBe(1);
+    expect(d.laws.getLawCount()).to.be(1);
   });
 
   it("has laws count 2 when match.is applied twice", function() {
@@ -60,7 +62,7 @@ describe("Applying laws", function() {
     d.laws.is(null);
     d.laws.is(null);
 
-    expect(d.laws.getLawCount()).toBe(2);
+    expect(d.laws.getLawCount()).to.be(2);
   });
 });
 
@@ -70,7 +72,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").not("luke").not("matt");
 
-    expect(d.laws.getLawCount()).toBe(3);
+    expect(d.laws.getLawCount()).to.be(3);
   });
 
   it("has the correct jury count with 3 different chained", function() {
@@ -78,7 +80,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").contains(" ").maxLength(12);
 
-    expect(d.laws.getLawCount()).toBe(3);
+    expect(d.laws.getLawCount()).to.be(3);
   });
 
   it("has the correct jury count with 6 same chained", function() {
@@ -86,7 +88,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").not("luke").not("matt").not("james").not("paulo").not("samantha");
 
-    expect(d.laws.getLawCount()).toBe(6);
+    expect(d.laws.getLawCount()).to.be(6);
   });
 
   it("has the correct jury count with 6 different chained", function() {
@@ -94,7 +96,7 @@ describe("Chaining laws", function() {
 
     d.laws.not("simon").contains(" ").maxLength(12).is("bla").minLength(10).not("rudeword");
 
-    expect(d.laws.getLawCount()).toBe(6);
+    expect(d.laws.getLawCount()).to.be(6);
   });
 
   it("returns no issues when matches all same chained laws", function() {
@@ -104,7 +106,7 @@ describe("Chaining laws", function() {
 
     var issues = d.judge("bruce");
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("returns no issues when matches all different chained laws", function() {
@@ -114,7 +116,7 @@ describe("Chaining laws", function() {
 
     var issues = d.judge("bruce");
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("returns one correct issue when breaks one of same chained laws", function() {
@@ -133,7 +135,7 @@ describe("Chaining laws", function() {
         }
     };
 
-    expect(issues[0]).toEqual(expectedIssue);
+    expect(issues[0]).to.eql(expectedIssue);
   });
 
   it("returns one correct issue when breaks one of different chained laws", function() {
@@ -152,7 +154,7 @@ describe("Chaining laws", function() {
         }
     };
 
-    expect(issues[0]).toEqual(expectedIssue);
+    expect(issues[0]).to.eql(expectedIssue);
   });
 
   it("returns two correct issues when breaks two of same chained laws", function() {
@@ -182,7 +184,7 @@ describe("Chaining laws", function() {
 
     var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
 
-    expect(issues).toEqual(expectedIssues);
+    expect(issues).to.eql(expectedIssues);
   });
 
   it("returns two correct issues when breaks two of different chained laws", function() {
@@ -212,7 +214,7 @@ describe("Chaining laws", function() {
 
     var expectedIssues = [ expectedIssueFirst, expectedIssueSecond ];
 
-    expect(issues).toEqual(expectedIssues);
+    expect(issues).to.eql(expectedIssues);
   });
 });
 
@@ -220,7 +222,7 @@ describe("Trialling children", function() {
   it("returns the correct child count when none applied", function() {
     var defendant = new Defendant("name");
 
-    expect(defendant.getChildCount()).toBe(0);
+    expect(defendant.getChildCount()).to.be(0);
   });
 
   it("returns the correct child count when one applied", function() {
@@ -228,7 +230,7 @@ describe("Trialling children", function() {
 
     var child = defendant.trial("bob");
 
-    expect(defendant.getChildCount()).toBe(1);
+    expect(defendant.getChildCount()).to.be(1);
   });
 
   it("returns the correct child count when two applied", function() {
@@ -237,7 +239,7 @@ describe("Trialling children", function() {
     var child_one = defendant.trial("bob");
     var child_two = defendant.trial("brian");
 
-    expect(defendant.getChildCount()).toBe(2);
+    expect(defendant.getChildCount()).to.be(2);
   });
 
   it("returns correct issue when one child is wrong", function() {
@@ -258,7 +260,7 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).toEqual([ expectedIssue ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssue ]);
   });
 
   it("returns correct issues when two children are wrong", function() {
@@ -290,7 +292,7 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).toEqual([ expectedIssueFirst, expectedIssueSecond ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssueFirst, expectedIssueSecond ]);
   });
 
   it("returns correct issues when one child and two grand children are wrong", function() {
@@ -338,6 +340,6 @@ describe("Trialling children", function() {
       }
     };
 
-    expect(defendant.judge(obj)).toEqual([ expectedIssueFirst, expectedIssueSecond, expectedIssueThird ]);
+    expect(defendant.judge(obj)).to.eql([ expectedIssueFirst, expectedIssueSecond, expectedIssueThird ]);
   });
 });

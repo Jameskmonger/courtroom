@@ -1,5 +1,7 @@
-///<reference path="../../typings/jasmine/jasmine.d.ts" />
+///<reference path="../../typings/expect.js/expect.js.d.ts" />
+///<reference path="../../typings/mocha/mocha.d.ts" />
 
+import expect = require('expect.js');
 import NotLawModule = require("../../src/courtroom/laws/not");
 
 const NotLaw = NotLawModule.NotLaw;
@@ -8,25 +10,25 @@ describe("NotLaw verdict tests (null and undefined)", function() {
   it("should return 'true' when not null and checking for not null", function() {
     var a = new NotLaw(null);
 
-    expect(a.verdict(5)).toBe(true);
+    expect(a.verdict(5)).to.be(true);
   });
 
   it("should return 'false' when null and checking for not null", function() {
     var a = new NotLaw(null);
 
-    expect(a.verdict(null)).toBe(false);
+    expect(a.verdict(null)).to.be(false);
   });
 
   it("should return 'true' when not undefined and checking for not undefined", function() {
     var a = new NotLaw(undefined);
 
-    expect(a.verdict(17)).toBe(true);
+    expect(a.verdict(17)).to.be(true);
   });
 
   it("should return 'false' when undefined and checking for not undefined", function() {
     var a = new NotLaw(undefined);
 
-    expect(a.verdict(undefined)).toBe(false);
+    expect(a.verdict(undefined)).to.be(false);
   });
 });
 
@@ -34,25 +36,25 @@ describe("NotLaw verdict tests (numeric)", function() {
   it("should return 'true' when integer numbers don't match", function() {
     var a = new NotLaw(5);
 
-    expect(a.verdict(3)).toBe(true);
+    expect(a.verdict(3)).to.be(true);
   });
 
   it("should return 'false' when integer numbers match", function() {
     var a = new NotLaw(5);
 
-    expect(a.verdict(5)).toBe(false);
+    expect(a.verdict(5)).to.be(false);
   });
 
   it("should return 'true' when decimal numbers don't match", function() {
     var a = new NotLaw(5.25);
 
-    expect(a.verdict(3.6)).toBe(true);
+    expect(a.verdict(3.6)).to.be(true);
   });
 
   it("should return 'false' when decimal numbers match", function() {
     var a = new NotLaw(5.25);
 
-    expect(a.verdict(5.25)).toBe(false);
+    expect(a.verdict(5.25)).to.be(false);
   });
 });
 
@@ -60,13 +62,13 @@ describe("NotLaw verdict tests (string)", function() {
   it("should return 'true' when strings don't match", function() {
     var a = new NotLaw("james");
 
-    expect(a.verdict("william")).toBe(true);
+    expect(a.verdict("william")).to.be(true);
   });
 
   it("should return 'false' when strings match", function() {
     var a = new NotLaw("james");
 
-    expect(a.verdict("james")).toBe(false);
+    expect(a.verdict("james")).to.be(false);
   });
 });
 
@@ -74,7 +76,7 @@ describe("NotLaw verdict tests (object)", function() {
   it("should return 'true' when objects don't match", function() {
     var a = new NotLaw(new NotLaw(null));
 
-    expect(a.verdict(new NotLaw(null))).toBe(true);
+    expect(a.verdict(new NotLaw(null))).to.be(true);
   });
 
   it("should return 'false' when objects match", function() {
@@ -82,7 +84,7 @@ describe("NotLaw verdict tests (object)", function() {
 
     var a = new NotLaw(dummy);
 
-    expect(a.verdict(dummy)).toBe(false);
+    expect(a.verdict(dummy)).to.be(false);
   });
 });
 
@@ -90,6 +92,6 @@ describe("NotLaw verdict tests (different types)", function() {
   it("should return 'true' for int vs string", function() {
     var a = new NotLaw(3);
 
-    expect(a.verdict("3")).toBe(true)
+    expect(a.verdict("3")).to.be(true)
   });
 });

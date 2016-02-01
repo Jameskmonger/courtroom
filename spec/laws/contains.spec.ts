@@ -1,5 +1,7 @@
-///<reference path="../../typings/jasmine/jasmine.d.ts" />
+///<reference path="../../typings/expect.js/expect.js.d.ts" />
+///<reference path="../../typings/mocha/mocha.d.ts" />
 
+import expect = require('expect.js');
 import Courtroom = require("../../src/index");
 
 import StringLawModule = require("../../src/courtroom/laws/contains");
@@ -9,13 +11,13 @@ describe("string.contains Constructor tests", function() {
   it("should have correct name", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.getName()).toBe("contains");
+    expect(j.getName()).to.be("contains");
   });
 
   it("should have correct details", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.getDetails()).toEqual({ required: "req" });
+    expect(j.getDetails()).to.eql({ required: "req" });
   });
 });
 
@@ -23,13 +25,13 @@ describe("string.contains Verdict tests", function() {
   it("should give false verdict if incorrect", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.verdict("bla")).toBe(false);
+    expect(j.verdict("bla")).to.be(false);
   });
 
   it("should have true verdict if correct", function() {
     var j = new ContainsLaw("req");
 
-    expect(j.verdict("abcreqjkl")).toEqual(true);
+    expect(j.verdict("abcreqjkl")).to.equal(true);
   });
 });
 
@@ -45,7 +47,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string equals the requirements with value 'another_req'", function() {
@@ -59,7 +61,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string contains the requirements with value 'req'", function() {
@@ -73,7 +75,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return no issues if string contains the requirements with value 'another_req'", function() {
@@ -87,7 +89,7 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues).toEqual([]);
+    expect(issues).to.be.empty();
   });
 
   it("should return issue with correct details if string doesn't contain the requirements with value 'req'", function() {
@@ -101,11 +103,11 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues.length).toEqual(1);
+    expect(issues.length).to.equal(1);
 
-    expect(issues[0].property).toBe("property");
-    expect(issues[0].law).toBe("contains");
-    expect(issues[0].details.required).toBe("req");
+    expect(issues[0].property).to.be("property");
+    expect(issues[0].law).to.be("contains");
+    expect(issues[0].details.required).to.be("req");
   });
 
   it("should return issue with correct details if string doesn't contain the requirements with value 'apple'", function() {
@@ -119,10 +121,10 @@ describe("contains tests", function() {
 
     var issues = c.judge(dummy);
 
-    expect(issues.length).toEqual(1);
+    expect(issues.length).to.equal(1);
 
-    expect(issues[0].property).toBe("property");
-    expect(issues[0].law).toBe("contains");
-    expect(issues[0].details.required).toBe("apple");
+    expect(issues[0].property).to.be("property");
+    expect(issues[0].law).to.be("contains");
+    expect(issues[0].details.required).to.be("apple");
   });
 });
