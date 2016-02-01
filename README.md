@@ -61,6 +61,10 @@ Property length must be less than given number
 
 Property length must be greater than given number
 
+#### `matches(RegExp)`
+
+Property matches a given regular expression
+
 ## Contribute
 
 ### Setup :wrench:
