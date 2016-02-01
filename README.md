@@ -1,6 +1,6 @@
 # courtroom
 
-[![Build Status](https://travis-ci.org/courtroom/courtroom.svg?branch=master)](https://travis-ci.org/courtroom/courtroom) [![Coverage Status](https://coveralls.io/repos/Jameskmonger/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/Jameskmonger/courtroom?branch=master)
+[![Build Status](https://travis-ci.org/courtroom/courtroom.svg?branch=master)](https://travis-ci.org/courtroom/courtroom) [![Coverage Status](https://coveralls.io/repos/courtroom/courtroom/badge.svg?branch=master&service=github)](https://coveralls.io/github/courtroom/courtroom?branch=master)
 [![npm version](https://badge.fury.io/js/courtroom.svg)](https://badge.fury.io/js/courtroom)
 [![Dependency status](https://david-dm.org/jameskmonger/courtroom/status.png)](https://david-dm.org/jameskmonger/courtroom#info=dependencies&view=table)
 [![Dev Dependency Status](https://david-dm.org/jameskmonger/courtroom/dev-status.png)](https://david-dm.org/jameskmonger/courtroom#info=devDependencies&view=table)
