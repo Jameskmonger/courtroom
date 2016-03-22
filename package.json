@@ -4,7 +4,7 @@
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test",
+    "test": "npm run test:build && npm run test:link:create && npm run test:run && npm run test:link:remove",
     "test:build": "node node_modules/typescript/bin/tsc --project spec --outDir test-build --module commonjs",
     "test:run": "node node_modules/mocha/bin/mocha test-build/spec/**/*.spec.js",
     "test:link:create": "node node_modules/modulink/modulink --name courtroom --target test-build/src",
