@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
-    "test:build": "node node_modules/typescript/bin/tsc --project spec --outDir test-build --module commonjs"
+    "test:build": "node node_modules/typescript/bin/tsc --project spec --outDir test-build --module commonjs",
+    "test:run": "node node_modules/mocha/bin/mocha test-build/spec/**/*.spec.js"
   },
   "repository": {
     "type": "git",
