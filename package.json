@@ -4,7 +4,8 @@
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "test:build:src": "node node_modules/typescript/bin/tsc --project src --outDir test-build/src"
   },
   "repository": {
     "type": "git",
