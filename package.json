@@ -6,7 +6,8 @@
   "scripts": {
     "test": "gulp test",
     "test:build": "node node_modules/typescript/bin/tsc --project spec --outDir test-build --module commonjs",
-    "test:run": "node node_modules/mocha/bin/mocha test-build/spec/**/*.spec.js"
+    "test:run": "node node_modules/mocha/bin/mocha test-build/spec/**/*.spec.js",
+    "test:link:create": "node node_modules/modulink/modulink --name courtroom --target test-build/src"
   },
   "repository": {
     "type": "git",
