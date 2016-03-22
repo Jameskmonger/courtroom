@@ -2,7 +2,7 @@
 ///<reference path="../../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import Courtroom = require("../../src/index");
+import Courtroom = require("courtroom/index");
 
 describe("minLength tests", function() {
   it("should return no issues if minimum length is 0 and property is empty string", function() {

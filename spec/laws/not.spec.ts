@@ -2,7 +2,7 @@
 ///<reference path="../../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import NotLawModule = require("../../src/courtroom/laws/not");
+import NotLawModule = require("courtroom/courtroom/laws/not");
 
 const NotLaw = NotLawModule.NotLaw;
 

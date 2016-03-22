@@ -2,7 +2,7 @@
 ///<reference path="../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import DefendantModule = require("../src/courtroom/defendant");
+import DefendantModule = require("courtroom/courtroom/defendant");
 
 const Defendant = DefendantModule.Defendant;
 

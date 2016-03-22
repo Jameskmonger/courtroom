@@ -2,9 +2,9 @@
 ///<reference path="../../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import Courtroom = require("../../src/index");
+import Courtroom = require("courtroom/index");
 
-import StringLawModule = require("../../src/courtroom/laws/contains");
+import StringLawModule = require("courtroom/courtroom/laws/contains");
 const ContainsLaw = StringLawModule.ContainsLaw;
 
 describe("string.contains Constructor tests", function() {

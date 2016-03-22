@@ -2,7 +2,7 @@
 ///<reference path="../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import Courtroom = require("../src/index");
+import Courtroom = require('courtroom/index');
 
 describe("Courtroom Constructor", function() {
   it("does not have any defendants", function() {
