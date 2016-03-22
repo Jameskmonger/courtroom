@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:build && npm run test:link:create && npm run test:run && npm run test:link:remove",
-    "test:build": "node node_modules/typescript/bin/tsc --project spec --outDir test-build --module commonjs",
+    "test:build": "node node_modules/typescript/bin/tsc --project spec --module commonjs",
     "test:run": "node node_modules/mocha/bin/mocha test-build/spec/**/*.spec.js",
     "test:link:create": "node node_modules/modulink/modulink --name courtroom --target test-build/src",
     "test:link:remove": "node node_modules/rimraf/bin.js node_modules/courtroom"

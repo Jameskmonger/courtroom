@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "amd",
-        "moduleResolution": "classic",
+        "moduleResolution": "node",
         "isolatedModules": false,
         "jsx": "react",
         "experimentalDecorators": true,
@@ -12,8 +12,7 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "outDir": "../test-build/"
+        "suppressImplicitAnyIndexErrors": true
     },
     "filesGlob": [
         "**/*.ts",
