@@ -4,7 +4,14 @@
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:link:create && npm run test:build && npm run test:run && npm run test:prune",
+    "prepublish": "npm run publish:build",
+    "publish": "npm run publish:prune",
+    "publish:build": "node node_modules/typescript/bin/tsc --project src --module commonjs --outDir ./",
+    "publish:prune": "node node_modules/rimraf/bin.js ./index.js ./courtroom",
+
+    "pretest": "npm run test:link:create && npm run test:build",
+    "test": "npm run test:run",
+    "posttest": "npm run test:prune",
     "test:build": "node node_modules/typescript/bin/tsc --project spec --module commonjs",
     "test:run": "node node_modules/mocha/bin/mocha spec/**/*.spec.js",
     "test:link:create": "node node_modules/modulink/modulink --name courtroom --target src",
