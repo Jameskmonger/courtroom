@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "npm run publish:build",
+    "publish": "npm run publish:prune",
     "test": "npm run test:link:create && npm run test:build && npm run test:run && npm run test:prune",
     "test:build": "node node_modules/typescript/bin/tsc --project spec --module commonjs",
     "test:run": "node node_modules/mocha/bin/mocha spec/**/*.spec.js",
