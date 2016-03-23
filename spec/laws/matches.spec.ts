@@ -2,9 +2,9 @@
 ///<reference path="../../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import Courtroom = require("../../src/index");
+import Courtroom = require("courtroom/index");
 
-import RegExpLawModule = require("../../src/courtroom/laws/matches");
+import RegExpLawModule = require("courtroom/courtroom/laws/matches");
 const MatchesLaw = RegExpLawModule.MatchesLaw;
 
 describe("string.matches Constructor tests", function() {

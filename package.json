@@ -4,7 +4,12 @@
   "description": "Validation made easy!",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "npm run test:link:create && npm run test:build && npm run test:run && npm run test:prune",
+    "test:build": "node node_modules/typescript/bin/tsc --project spec --module commonjs",
+    "test:run": "node node_modules/mocha/bin/mocha spec/**/*.spec.js",
+    "test:link:create": "node node_modules/modulink/modulink --name courtroom --target src",
+    "test:link:remove": "node node_modules/rimraf/bin.js node_modules/courtroom",
+    "test:prune": "node node_modules/rimraf/bin.js src/*.js src/**/*.js spec/*.js spec/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,21 +26,10 @@
   "homepage": "https://github.com/Jameskmonger/courtroom#readme",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "gulp": "^3.9.0",
-    "gulp-mocha": "^2.2.0",
-    "gulp-typescript": "^2.10.0",
-    "jasmine": "^2.4.1",
-    "jasmine-core": "^2.4",
-    "karma": "^0.13.15",
-    "karma-chrome-launcher": "^0.2.2",
-    "karma-coverage": "^0.5.3",
-    "karma-coveralls": "^1.1.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-requirejs": "^0.2.2",
-    "karma-spec-reporter": "0.0.23",
-    "phantomjs": "^1.9.19",
-    "requirejs": "^2.1.22"
+    "mocha": "^2.4.5",
+    "modulink": "^1.1.0",
+    "rimraf": "^2.5.2",
+    "typescript": "^1.8.9"
   },
   "tonicExampleFilename": "example.js"
 }

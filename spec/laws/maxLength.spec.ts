@@ -2,7 +2,7 @@
 ///<reference path="../../typings/mocha/mocha.d.ts" />
 
 import expect = require('expect.js');
-import Courtroom = require("../../src/index");
+import Courtroom = require("courtroom/index");
 
 describe("maxLength tests", function() {
   it("should return no issues if string's length is 0", function() {

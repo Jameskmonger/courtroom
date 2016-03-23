@@ -9,3 +9,6 @@ typings
 
 index.js
 /courtroom
+
+spec/**/*.js
+src/**/*.js
