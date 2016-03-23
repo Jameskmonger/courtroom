@@ -1,11 +1,9 @@
 spec
 src
 typings
-karma.conf.js
-.travis.yml
 .gitignore
+.travis.yml
 .tsdrc
-test-main.ts
+DEPENDENCIES.md
+Gulpfile_old.js
 tsd.json
-test-build
-coverage
