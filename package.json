@@ -28,7 +28,8 @@
     "expect.js": "^0.3.1",
     "mocha": "^2.4.5",
     "modulink": "^1.1.0",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "typescript": "^1.8.9"
   },
   "tonicExampleFilename": "example.js"
 }
