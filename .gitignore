@@ -12,3 +12,5 @@ index.js
 
 spec/**/*.js
 src/**/*.js
+
+npm-debug.log
