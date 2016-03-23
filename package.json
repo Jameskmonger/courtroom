@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "npm run publish:build",
     "publish": "npm run publish:prune",
-    "publish:build": "node node_modules/typescript/bin/tsc --project src --module commonjs --outDir ./",
+    "publish:build": "node node_modules/typescript/bin/tsc --project src --module umd --outDir ./",
     "publish:prune": "node node_modules/rimraf/bin.js ./index.js ./courtroom",
 
     "pretest": "npm run test:link:create && npm run test:build",
