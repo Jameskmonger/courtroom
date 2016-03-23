@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jameskmonger/courtroom.git"
+    "url": "git+https://github.com/courtroom/courtroom.git"
   },
   "keywords": [
     "Validation"
@@ -28,9 +28,9 @@
   "author": "James Monger <jameskmonger@hotmail.co.uk> (http://jamesmonger.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Jameskmonger/courtroom/issues"
+    "url": "https://github.com/courtroom/courtroom/issues"
   },
-  "homepage": "https://github.com/Jameskmonger/courtroom#readme",
+  "homepage": "https://github.com/courtroom/courtroom#readme",
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^2.4.5",
