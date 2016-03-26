@@ -145,6 +145,14 @@ describe('MustLaw', () => {
             expect(name).to.be('anonymous');
         });
 
+        it('should return \'anonymous\' if unnamed inline function', () => {
+            let law = new MustLaw(function (str: number) {
+                return true;
+            });
+            let name = law.getDetails()['name'];
+            expect(name).to.be('anonymous');
+        });
+
     })
 
 });
