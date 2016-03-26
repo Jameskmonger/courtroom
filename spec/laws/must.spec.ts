@@ -136,7 +136,7 @@ describe('MustLaw', () => {
     describe('details', () => {
 
         it('should return \'anonymous\' if unnamed external function', () => {
-            let mustFunction = function (str: number) {
+            let mustFunction = function () {
                 return true;
             };
 
@@ -146,7 +146,7 @@ describe('MustLaw', () => {
         });
 
         it('should return \'anonymous\' if unnamed inline function', () => {
-            let law = new MustLaw(function (str: number) {
+            let law = new MustLaw(function () {
                 return true;
             });
             let name = law.getDetails()['name'];
