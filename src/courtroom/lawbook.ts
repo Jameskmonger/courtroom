@@ -5,6 +5,7 @@ import StringContainsLaw = require("./laws/contains");
 import RegExpMatchesLaw = require("./laws/matches");
 import StringMaxLengthLaw = require("./laws/maxLength");
 import StringMinLengthLaw = require("./laws/minLength");
+import MustLaw = require("./laws/must");
 
 export class Lawbook {
   private laws: Array<Law.Law>;
@@ -23,6 +24,12 @@ export class Lawbook {
     this.laws.push(new IsLaw.IsLaw(compare));
 
     return this;
+  }
+
+  public must(func: (...args: any[]) => boolean): Lawbook {
+      this.laws.push(new MustLaw.MustLaw(func));
+
+      return this;
   }
 
   public matches(requirement: RegExp): Lawbook {
