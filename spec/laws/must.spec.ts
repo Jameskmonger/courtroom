@@ -17,4 +17,22 @@ describe('MustLaw', () => {
 
     });
 
+    describe('verdict', () => {
+
+        it('should call into function with given string', () => {
+            let functionCalled = false;
+            let mustFunction = function func () {
+                functionCalled = true;
+
+                return false;
+            };
+
+            let law = new MustLaw(mustFunction);
+            law.verdict('a');
+
+            expect(functionCalled).to.be(true);
+        });
+
+    });
+
 });
