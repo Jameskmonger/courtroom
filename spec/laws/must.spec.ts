@@ -7,7 +7,7 @@ describe('MustLaw', () => {
 
     describe('constructor', () => {
 
-        it('should have correct name', function () {
+        it('should have correct name', () => {
             let mustFunction = function func () { return false; };
 
             let law = new MustLaw(mustFunction);
