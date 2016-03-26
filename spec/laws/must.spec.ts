@@ -69,6 +69,24 @@ describe('MustLaw', () => {
             expect(functionCalled).to.be(true);
         });
 
+        it('should call into function with given numer [test case 1]', () => {
+            let givenNumber = 4;
+
+            let functionCalled = false;
+            let mustFunction = function func (str: number) {
+                if (str === givenNumber) {
+                    functionCalled = true;
+                }
+
+                return false;
+            };
+
+            let law = new MustLaw(mustFunction);
+            law.verdict(givenNumber);
+
+            expect(functionCalled).to.be(true);
+        });
+
     });
 
 });
