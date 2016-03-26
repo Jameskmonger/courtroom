@@ -69,7 +69,7 @@ describe('MustLaw', () => {
             expect(functionCalled).to.be(true);
         });
 
-        it('should call into function with given numer [test case 1]', () => {
+        it('should call into function with given number [test case 1]', () => {
             let givenNumber = 4;
 
             let functionCalled = false;
@@ -87,7 +87,7 @@ describe('MustLaw', () => {
             expect(functionCalled).to.be(true);
         });
 
-        it('should call into function with given numer [test case 2]', () => {
+        it('should call into function with given number [test case 2]', () => {
             let givenNumber = 123982937;
 
             let functionCalled = false;
