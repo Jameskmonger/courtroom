@@ -65,6 +65,10 @@ Property length must be greater than given number
 
 Property matches a given regular expression
 
+#### `must(Function)`
+
+The function must return true for the property to be valid.
+
 ## Contribute
 
 ### Setup :wrench:
