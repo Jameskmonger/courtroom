@@ -3,8 +3,7 @@
 import expect = require('expect.js');
 import Courtroom = require("courtroom/index");
 
-import StringLawModule = require("courtroom/courtroom/laws/contains");
-const ContainsLaw = StringLawModule.ContainsLaw;
+import { ContainsLaw } from 'courtroom/courtroom/laws/contains';
 
 describe("string.contains Constructor tests", function() {
   it("should have correct name", function() {

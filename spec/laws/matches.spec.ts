@@ -3,8 +3,7 @@
 import expect = require('expect.js');
 import Courtroom = require("courtroom/index");
 
-import RegExpLawModule = require("courtroom/courtroom/laws/matches");
-const MatchesLaw = RegExpLawModule.MatchesLaw;
+import { MatchesLaw } from 'courtroom/courtroom/laws/matches';
 
 describe("string.matches Constructor tests", function() {
   it("should have correct name", function() {

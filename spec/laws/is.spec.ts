@@ -1,9 +1,7 @@
 ///<reference path="../../typings/main.d.ts" />
 
 import expect = require('expect.js');
-import IsLawModule = require("courtroom/courtroom/laws/is");
-
-const IsLaw = IsLawModule.IsLaw;
+import { IsLaw } from 'courtroom/courtroom/laws/is';
 
 describe("IsLaw verdict tests (null and undefined)", function() {
   it("should return 'false' when not null and checking for null", function() {
