@@ -105,6 +105,32 @@ describe('MustLaw', () => {
             expect(functionCalled).to.be(true);
         });
 
+        it('should return true if function returns true', () => {
+            let functionReturn = true;
+
+            let mustFunction = function func (str: number) {
+                return functionReturn;
+            };
+
+            let law = new MustLaw(mustFunction);
+            let verdict = law.verdict('');
+
+            expect(verdict).to.be(functionReturn);
+        });
+
+        it('should return false if function returns false', () => {
+            let functionReturn = false;
+
+            let mustFunction = function func (str: number) {
+                return functionReturn;
+            };
+
+            let law = new MustLaw(mustFunction);
+            let verdict = law.verdict('');
+
+            expect(verdict).to.be(functionReturn);
+        });
+
     });
 
 });
