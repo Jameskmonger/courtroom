@@ -8,14 +8,15 @@
     "publish": "npm run publish:prune",
     "publish:build": "node node_modules/typescript/bin/tsc --project src --module umd --outDir ./",
     "publish:prune": "node node_modules/rimraf/bin.js ./index.js ./courtroom",
-    "pretest": "npm run test:link:create && npm run test:build",
+    "pretest": "npm run test:link:create && npm run installtypings && npm run test:build",
     "test": "npm run test:run",
     "posttest": "npm run test:prune",
     "test:build": "node node_modules/typescript/bin/tsc --project spec --module commonjs",
     "test:run": "node node_modules/mocha/bin/mocha spec/**/*.spec.js",
     "test:link:create": "node node_modules/modulink/modulink --name courtroom --target src",
     "test:link:remove": "node node_modules/rimraf/bin.js node_modules/courtroom",
-    "test:prune": "node node_modules/rimraf/bin.js src/*.js src/**/*.js spec/*.js spec/**/*.js"
+    "test:prune": "node node_modules/rimraf/bin.js src/*.js src/**/*.js spec/*.js spec/**/*.js",
+    "installtypings": "node node_modules/typings/dist/bin.js install"
   },
   "repository": {
     "type": "git",
