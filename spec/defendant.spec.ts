@@ -1,9 +1,7 @@
 ///<reference path="../typings/main.d.ts" />
 
 import expect = require('expect.js');
-import DefendantModule = require("courtroom/courtroom/defendant");
-
-const Defendant = DefendantModule.Defendant;
+import { Defendant } from 'courtroom/courtroom/defendant';
 
 describe("Defendant Constructor", function() {
   it("stores the name correctly for 'property'", function() {
