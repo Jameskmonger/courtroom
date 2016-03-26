@@ -2,6 +2,10 @@ import { Law } from './law';
 
 export class MustLaw implements Law {
 
+    constructor (mustFunction: () => boolean) {
+
+    }
+
     public verdict(defendant: any): boolean {
         return false;
     }
@@ -13,5 +17,5 @@ export class MustLaw implements Law {
     public getDetails(): any {
         return {};
     }
-    
+
 }
