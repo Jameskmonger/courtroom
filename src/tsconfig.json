@@ -28,6 +28,7 @@
         "courtroom/laws/matches.ts",
         "courtroom/laws/maxLength.ts",
         "courtroom/laws/minLength.ts",
+        "courtroom/laws/must.ts",
         "courtroom/laws/not.ts",
         "index.ts"
     ],
