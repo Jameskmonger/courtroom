@@ -8,7 +8,6 @@
     "publish": "npm run publish:prune",
     "publish:build": "node node_modules/typescript/bin/tsc --project src --module umd --outDir ./",
     "publish:prune": "node node_modules/rimraf/bin.js ./index.js ./courtroom",
-
     "pretest": "npm run test:link:create && npm run test:build",
     "test": "npm run test:run",
     "posttest": "npm run test:prune",
@@ -36,7 +35,8 @@
     "mocha": "^2.4.5",
     "modulink": "^1.1.0",
     "rimraf": "^2.5.2",
-    "typescript": "^1.8.9"
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9"
   },
   "tonicExampleFilename": "example.js"
 }
