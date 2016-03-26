@@ -1,5 +1,4 @@
-///<reference path="../../typings/expect.js/expect.js.d.ts" />
-///<reference path="../../typings/mocha/mocha.d.ts" />
+///<reference path="../../typings/main.d.ts" />
 
 import expect = require('expect.js');
 import NotLawModule = require("courtroom/courtroom/laws/not");
