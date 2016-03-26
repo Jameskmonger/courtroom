@@ -13,4 +13,5 @@ export class MustLaw implements Law {
     public getDetails(): any {
         return {};
     }
+    
 }
