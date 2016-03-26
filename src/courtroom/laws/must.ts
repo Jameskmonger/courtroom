@@ -1,5 +1,8 @@
 import { Law } from './law';
 
+declare var require;
+const getFunctionName = require('getfunctionname');
+
 export class MustLaw implements Law {
 
     private _mustFunction: (...args: any[]) => boolean;
