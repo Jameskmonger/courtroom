@@ -39,5 +39,8 @@
     "typescript": "^1.8.9",
     "typings": "^0.7.9"
   },
-  "tonicExampleFilename": "example.js"
+  "tonicExampleFilename": "example.js",
+  "dependencies": {
+    "getfunctionname": "^0.3.2"
+  }
 }
