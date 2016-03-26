@@ -51,6 +51,24 @@ describe('MustLaw', () => {
             expect(functionCalled).to.be(true);
         });
 
+        it('should call into function with given string [test case 2]', () => {
+            let givenString = 'a string, that is what i am, and what i always will be';
+
+            let functionCalled = false;
+            let mustFunction = function func (str: string) {
+                if (str === givenString) {
+                    functionCalled = true;
+                }
+
+                return false;
+            };
+
+            let law = new MustLaw(mustFunction);
+            law.verdict(givenString);
+
+            expect(functionCalled).to.be(true);
+        });
+
     });
 
 });
