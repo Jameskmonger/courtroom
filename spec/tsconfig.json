@@ -27,6 +27,7 @@
         "laws/matches.spec.ts",
         "laws/maxLength.spec.ts",
         "laws/minLength.spec.ts",
+        "laws/must.spec.ts",
         "laws/not.spec.ts"
     ],
     "atom": {
