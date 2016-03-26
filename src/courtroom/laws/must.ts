@@ -2,7 +2,7 @@ import { Law } from './law';
 
 export class MustLaw implements Law {
 
-    constructor (mustFunction: () => boolean) {
+    constructor (mustFunction: (...args: any[]) => boolean) {
 
     }
 
