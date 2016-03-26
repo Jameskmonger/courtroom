@@ -153,6 +153,20 @@ describe('MustLaw', () => {
             expect(name).to.be('anonymous');
         });
 
+        it('should return \'anonymous\' if external lambda expression', () => {
+            let mustFunction = () => true;
+
+            let law = new MustLaw(mustFunction);
+            let name = law.getDetails()['name'];
+            expect(name).to.be('anonymous');
+        });
+
+        it('should return \'anonymous\' if inline lambda expression', () => {
+            let law = new MustLaw(() => true);
+            let name = law.getDetails()['name'];
+            expect(name).to.be('anonymous');
+        });
+
     })
 
 });
