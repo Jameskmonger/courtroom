@@ -133,4 +133,18 @@ describe('MustLaw', () => {
 
     });
 
+    describe('details', () => {
+
+        it('should return \'anonymous\' if unnamed external function', () => {
+            let mustFunction = function (str: number) {
+                return true;
+            };
+
+            let law = new MustLaw(mustFunction);
+            let name = law.getDetails()['name'];
+            expect(name).to.be('anonymous');
+        });
+
+    })
+
 });
