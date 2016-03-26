@@ -9,8 +9,7 @@ export class MustLaw implements Law {
     }
 
     public verdict(defendant: any): boolean {
-        this._mustFunction(defendant);
-        return false;
+        return this._mustFunction(defendant);
     }
 
     public getName(): string {
