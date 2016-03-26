@@ -21,7 +21,7 @@ export class MustLaw implements Law {
 
     public getDetails(): any {
         return {
-            name: 'anonymous'
+            name: getFunctionName(this._mustFunction)
         };
     }
 
