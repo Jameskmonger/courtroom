@@ -19,7 +19,7 @@ describe('MustLaw', () => {
 
     describe('verdict', () => {
 
-        it('should call into function with given string', () => {
+        it('should call into function', () => {
             let functionCalled = false;
             let mustFunction = function func () {
                 functionCalled = true;
