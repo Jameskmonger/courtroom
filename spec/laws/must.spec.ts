@@ -177,6 +177,16 @@ describe('MustLaw', () => {
             expect(name).to.be('testName');
         });
 
+        it('should return function name for named external function [test case 2]', () => {
+            let mustFunction = function anotherTestName () {
+                return true;
+            };
+
+            let law = new MustLaw(mustFunction);
+            let name = law.getDetails()['name'];
+            expect(name).to.be('anotherTestName');
+        });
+
     })
 
 });
