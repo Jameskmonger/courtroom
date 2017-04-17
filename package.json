@@ -3,6 +3,9 @@
   "version": "0.7.11.1",
   "description": "Validation made easy!",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.2.3"
+  },
   "scripts": {
     "prepublish": "npm run publish:build",
     "publish": "npm run publish:prune",
